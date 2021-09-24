@@ -1,0 +1,19 @@
+<div>
+  <%= link_to 'Home', root_path, class: 'btn btn-primary btn-sm', method: :get %>
+
+  <h1> All transactions </h1>
+  <% @payments.each do |payment| %>
+    <div>
+      <p> Transaction type: <%= payment.transaction_type %> </p>
+      <p> payment id <%= payment.id %> </p>
+      <p> user_id <%= payment.user_id %> </p>
+      <p> wallet_id <%= payment.wallet_id %> </p>
+      <p> stock_id <%= payment.stock_id %> </p>
+      <p> current_price <%= payment.current_price %> </p>
+      <p> time_placed <%= payment.time_placed %> </p>
+      <hr>
+    </div>
+
+  <% end %>
+  <%= link_to 'New Payment', new_payment_path, class: 'btn btn-outline-primary btn-sm', method: :get %>
+</div>

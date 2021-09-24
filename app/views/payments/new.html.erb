@@ -1,0 +1,22 @@
+<%= form_with scope: :payment, model: @payment, class: "payment-form", locale: true do |f| %>
+
+  <div class="mb-3">
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :company %>
+    <%= f.select :stock_id, @stocks %>
+  </div>
+
+  <div class="mb-3">
+    <%= f.label :transaction_type %>
+    <%= f.select :transaction_type, ['buy', 'sell'] %>
+  </div>
+ 
+  <div>
+    <%= f.submit class: 'btn btn-outline-primary btn-sm' %>
+  </div>
+  <%= link_to 'Home', root_path, class: 'btn btn-primary btn-sm', method: :get %>
+<% end %>
