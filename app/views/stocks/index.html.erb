@@ -1,0 +1,10 @@
+<div> 
+  <% @stocks.each do |stock| %>
+    <ul> 
+      <li> <%= stock.id %> </li>
+      <li> <%= stock.symbol %> </li>
+      <li> <%= stock.company_name %> </li>
+      <li> <%= stock.description %> </li>
+    </ul>
+  <% end %>
+</div>
