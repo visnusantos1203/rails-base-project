@@ -1,0 +1,44 @@
+.navbar{
+  color: black;
+  height: 5rem;
+  position: absolute;
+  .container-fluid{
+    display: flex;
+    justify-content: space-between;
+    background-color: transparent;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    padding: 0;
+    .navbar-collapse{
+      width: auto;
+      flex-grow: 0;
+      .navbar-nav{
+        display: flex;
+        justify-content: space-between;
+        .nav-link{
+          color: #86298B;
+          font-size: 22px;
+        }
+        p{
+          margin: 0;
+        }
+      }
+    }
+  }
+  .navbar-brand{
+    //margin-left: 2rem;
+    color: white !important;
+    font-family: monospace;
+    font-size: 2.5rem;
+    font-weight: bolder;
+    .logo{
+      height: 7rem;
+    }
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .navlink{
+    display: none;
+  }
+}
