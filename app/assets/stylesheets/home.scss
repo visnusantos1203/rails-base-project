@@ -3,14 +3,25 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .home-main{
+  #wave{
+    position: absolute;
+    z-index: 1;
+  }
+  .collapse{
+    margin-left: auto;
+  }
   section{
+    height: 100vh;
+  }
+  #one{
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     //border: 1px solid black;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1500' height='900' preserveAspectRatio='none' viewBox='0 0 1200 900'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1097%26quot%3b)' fill='none'%3e%3crect width='1200' height='900' x='0' y='0' fill='url(%23SvgjsRadialGradient1098)'%3e%3c/rect%3e%3cpath d='M802.39 395.84 a160.38 160.38 0 1 0 320.76 0 a160.38 160.38 0 1 0 -320.76 0z' fill='rgba(111%2c 5%2c 188%2c 0.13)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M-308.34 259.07 0 1 0 565.04 0 0 1 0 -565.04 0z' fill='rgba(111%2c 5%2c 188%2c 0.23)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M300.99 59.77  0 1 0 588.4 0  0 1 0 -588.4 0z' fill='rgba(111%2c 5%2c 188%2c 0.23)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M-3.15 630.1 a165.37 165.37 0 1 0 330.74 0 a165.37 165.37 0 1 0 -330.74 0z' fill='rgba(111%2c 5%2c 188%2c 0.23)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1097'%3e%3crect width='1200' height='900' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='100%25' r='1081.67' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1098'%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 0)' offset='0'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
     background-repeat: no-repeat;
-    height: 100vh;
-    margin-top: 3rem;
+    background-position-x: center;
+    background-position-y: center;
     .headline{
       display: flex;
       width: 489px;
@@ -18,6 +29,8 @@
       flex-direction: column;
       justify-content: center;
       align-content: center;
+      padding-top: 6rem;
+      //border: 1px solid black;
       p{
         text-align: center;
         font-size: 4rem;
@@ -37,7 +50,11 @@
     svg{
       width: 589px;
       min-height: 15rem;
-      margin: auto;
+      margin: 0;
+      margin-top: auto;
+      margin-bottom: auto;
+      padding-top: 2rem;
+      //border: 1px solid black;
     }
   
   }
@@ -124,3 +141,78 @@
   }
 }
 
+
+/* SECTION 2 */
+#two{
+  margin-left: 10vw;
+  margin-right: 10vw;
+  //border: 1px solid black;
+  height: auto;
+  .break{
+    height: 10rem;
+    //background-color: #652D90;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding-top: 4rem;
+    h1, p{
+      text-align: center;
+    }
+  }
+  .content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 95%;
+    height: auto;
+    margin-top: 2rem;
+    margin-inline-start: auto;
+    gap: 2rem;
+    .card{
+      padding: 1rem;
+      //border: 1px solid black;
+    }
+  }
+}
+
+/* FOOTER */
+
+#footer{
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(243, 242, 242);
+  height: 100vh;
+  padding: 2rem;
+  .inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 2rem;
+    width: 100%;
+    border: 1px solid black;
+    gap: 2rem;
+    height: 65%;
+    .card{
+      border: 1px solid black;
+      width: 30%;
+      height: auto;
+      padding: 2rem;
+      .logo-footer{
+        width: 10rem;
+      }  
+    }
+  }
+  .contacts{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+    border: 1px solid red;
+    > .card{
+      width: 20%;
+      padding: 2rem;
+    }
+  }
+}
