@@ -8,3 +8,9 @@
   border: 1px solid black;
   margin: 3rem auto auto;
 }
+.price-container{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 100%;
+}

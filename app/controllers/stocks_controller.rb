@@ -44,6 +44,8 @@ class StocksController < ApplicationController
     @data_values = []
 
     historical_prices = client.historical_prices(@stock.symbol)
+    @price = client.price(@stock.symbol)
+
     historical_prices.each do |price|
       @data_keys << price.label
       @data_values << price.close

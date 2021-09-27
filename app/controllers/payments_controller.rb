@@ -12,6 +12,28 @@ class PaymentsController < ApplicationController
     @payment = Payment.find_by(params[:id])
   end
 
+  def buy
+    @payment = Payment.new
+    @stocks = []
+    @symbols = []
+    stocks = Stock.all
+    stocks.each do |stock|
+      @stocks.push([stock.company_name, stock.id])
+      @symbols << [stock.symbol]
+    end
+  end
+
+  def sell
+    @payment = Payment.new
+    @stocks = []
+    @symbols = []
+    stocks = Stock.all
+    stocks.each do |stock|
+      @stocks.push([stock.company_name, stock.id])
+      @symbols << [stock.symbol]
+    end
+  end
+
   def new
     @payment = Payment.new
     @stocks = []

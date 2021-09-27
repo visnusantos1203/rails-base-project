@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   root to: "home#index"
 
   resources :portfolios, :payments, :wallets, :stocks
+
+  get '/payments/:id/buy' => 'payments#buy', as: "payment_buy_path" # yung name before 'controller' lang, snake case, then #, then saang action or method pupunta(index)
+  get '/payments/:id/sell' => 'payments#sell', as: "payment_sell_path" # yung name before 'controller' lang, snake case, then #, then saang action or method pupunta(index)
+
 end

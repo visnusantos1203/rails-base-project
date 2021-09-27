@@ -1,8 +1,17 @@
 <h1> <%= @stock.company_name %> (<%= @stock.symbol %>) </h1>
 
+<div class="price-container">
+  <h3>Price:</h3> 
+  <h2> <%= @price %> </h2>
+</div>
+
 <div class="chart">
   <canvas id="myChart" width="400" height="auto" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>  
 </div>
+
+<%= link_to "Buy", payment_buy_path_path(@stock.id), class: "btn btn-danger", method: "get" %>
+<%= link_to "Sell", payment_sell_path_path(@stock.id), class: "btn btn-success", method: "get" %>
+
 <h3> Description </h3>
 <p> <%= @stock.description %> </p>
 
