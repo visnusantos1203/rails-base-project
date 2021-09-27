@@ -1,10 +1,8 @@
+
 <div> 
   <% @stocks.each do |stock| %>
-    <ul> 
-      <li> <%= stock.id %> </li>
-      <li> <%= stock.symbol %> </li>
-      <li> <%= stock.company_name %> </li>
-      <li> <%= stock.description %> </li>
-    </ul>
+    <h1> <%= stock.company_name %></h1>
+
+    <%= link_to "View", stock_path(stock.id), class: "btn btn-primary", method: "get" %>
   <% end %>
 </div>
