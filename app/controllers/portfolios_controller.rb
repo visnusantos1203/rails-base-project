@@ -9,6 +9,16 @@ class PortfoliosController < ApplicationController
       company = Stock.find_by(id: payment.stock_id)
       @companies.push([company.company_name, payment.stock_id])
     end
+
+    @data_keys = [
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+    ]
+    @data_values = [0, 10, 5, 2, 20, 30, 45]
     # @name = @payments.stock_id.company_name
   end
 
