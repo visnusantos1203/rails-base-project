@@ -1,0 +1,45 @@
+<%= render "admins/navbar" %>
+
+<h1> Welcome to admin dashboard </h1>
+
+<h2> Create new trader </h2>
+<%= link_to "Create new trader", admins_new_user_path %>
+<hr>
+
+<h2> All traders </h2>
+<% if @all_users.empty? %>
+  <p> Sorry, we don't have traders yet :( </p>
+<% else %>
+  <% @all_users.each do |trader| %>
+    <div>
+      <h6> ID: <%= trader.id %> </h6>
+      <h6> Email: <%= trader.email %> </h6>
+      <h6> Status: <%= trader.approved ? "Approved" : "Pending" %> </h6>
+      <%= link_to "View", show_profile_path(trader.id), class: "btn btn-outline-secondary", method: "get" %>
+      <%= link_to "Update", edit_user_profile_path(trader.id), class: "btn btn-outline-secondary", method: "get" %>
+      <% unless trader.approved %>
+        <%= link_to "Approve this trader", approve_user_path(trader.id), class: "btn btn-outline-secondary", method: "put" %>
+      <% end %>
+    </div>
+    <hr>
+  <% end %>
+
+<% end %>
+<hr>
+
+<h2> All transactions </h2>
+<% if @transactions.empty? %>
+  Oops! There are no transactions yet
+<% else %>
+  <% @transactions.each do |transaction| %>
+    <div>
+      <p> Transaction ID: <%= transaction.id %> </p>
+      <p> User ID: <%= transaction.user_id %> </p>
+      <p> Transaction Type: <%= transaction.transaction_type %> </p>
+      <p> Quantity: <%= transaction.quantity %> </p>
+      <p> Current price: <%= transaction.current_price %> </p>
+      <p> Time placed: <%= transaction.time_placed %> </p>
+    </div>
+    <hr>
+  <% end %>
+<% end %>

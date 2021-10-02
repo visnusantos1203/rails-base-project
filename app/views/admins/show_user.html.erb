@@ -1,0 +1,13 @@
+<%= render "admins/navbar" %>
+
+<div class="container">
+  <p> ID: <%= @user.id%> </p>
+  <p> First Name: <%= @user.first_name%> </p>
+  <p> Last Name: <%= @user.last_name%> </p>
+  <% if @user.wallet == nil %>
+    <p> This user doesn't have wallet yet </p>
+  <% else %>
+    <p> Balance: <%= @user.wallet.balance%> </p>
+  <% end %>
+  <p> Email: <%= @user.email%> </p>
+</div>

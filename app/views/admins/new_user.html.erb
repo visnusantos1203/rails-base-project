@@ -1,0 +1,32 @@
+<%= render "admins/navbar" %>
+
+<div >
+  <h1> Add new User </h1>
+  <%= form_with scope: :user, url: '/admins/new_user', method: :post do |f| %>
+
+    <div class="name-container">
+      <div class="form-group">
+          <%= f.text_field :first_name, autofocus: true, class: 'form-control', placeholder: "First Name" %>
+      </div>
+      <div class="form-group">
+          <%= f.text_field :last_name , autofocus: true, class: 'form-control', placeholder: "Last Name" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <%= f.text_field :username , autofocus: true, class: 'form-control', placeholder: "Username" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', placeholder: "Email" %>
+    </div>
+
+    <div class="form-group">
+      <%= f.password_field :password, autocomplete: "new-password", class: 'form-control', placeholder: "Password (#{@minimum_password_length} characters minimum)" %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Add User", class: 'btn btn-outline-secondary mt-3 submit' %>
+    </div>
+  <% end %>
+</div>

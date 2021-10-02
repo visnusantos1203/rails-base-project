@@ -1,0 +1,19 @@
+<%= render "admins/navbar" %>
+
+<h1> Approved Users </h1>
+<% if @approved_users.empty? %>
+  <h3> Please approve users first </h3>
+<% else %>
+  <% @approved_users.each do |users| %>
+    <p> Hindi pa approved na users ID: <%= users.id %></p>
+    <p> Hindi pa approved na users: <%= users.email %></p>
+    <hr>
+  <% end %>
+<% end %>
+
+<h1> For Approval Users </h1>
+<% @for_approvals.each do |users| %>
+  <p> Hindi pa approved na users ID: <%= users.id %></p>
+  <p> Hindi pa approved na users: <%= users.email %></p>
+  <hr>
+<% end %>
