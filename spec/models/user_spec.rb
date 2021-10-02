@@ -37,13 +37,5 @@ RSpec.describe User, type: :model do
       expect(user).not_to be_valid
     end
 
-    it 'is not valid without user_type' do
-      user = described_class.new
-      user.last_name = 'Dela Cruz'
-      user.user_type = nil
-      user.password = '12345678'
-
-      expect(user).not_to be_valid
-    end
   end
 end
