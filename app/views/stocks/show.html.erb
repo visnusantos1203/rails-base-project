@@ -1,18 +1,30 @@
-<h1> <%= @stock.company_name %> (<%= @stock.symbol %>) </h1>
+<%= render "shared/navbar" %>
+<div class="container-fluid stock-main">
+  <h1> <%= @stock.company_name %> (<%= @stock.symbol %>) </h1>
 
-<div class="price-container">
-  <h3>Price:</h3> 
-  <h2> <%= @price %> </h2>
+  <div class="container-fluid price-container">
+    <div>
+      <h3>Price:</h3> 
+      <h2> <%= @price %> </h2>
+    </div>
+    <div>
+      <%= link_to "Buy", payment_buy_path(id: @stock.id, transaction_type: 1), class: "btn btn-danger ", method: "get" %>
+      <%= link_to "Sell", payment_sell_path(id: @stock.id, transaction_type: 0), class: "btn btn-success", method: "get" %>
+    </div>
+  </div>
+
+  <div class="container-fluid chart">
+    <canvas id="myChart" width="400" height="auto" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>  
+  </div>
+
+  <h3> Description </h3>
+  <p> <%= @stock.description %> </p>
+
+  <h3> News </h3>
+  <% @news.each do |news| %>
+    <h4> Headline: <%= news.headline%> </h4>
+    <p> Summary: <%= news.summary%> </p>
+    <p> Source: <%= news.source%> </p>
+    <hr>
+  <% end %>
 </div>
-
-<div class="chart">
-  <canvas id="myChart" width="400" height="auto" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>  
-</div>
-
-<%= link_to "Buy", payment_buy_path_path(@stock.id), class: "btn btn-danger", method: "get" %>
-<%= link_to "Sell", payment_sell_path_path(@stock.id), class: "btn btn-success", method: "get" %>
-
-<h3> Description </h3>
-<p> <%= @stock.description %> </p>
-
-<h3> News </h3>

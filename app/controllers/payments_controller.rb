@@ -1,50 +1,22 @@
 class PaymentsController < ApplicationController
   before_action :authenticate_user!
 
-  # dito sana naka list lang lahat ng companies na may investment si user
   def index
     @payments = Payment.all
     # @filtered_names = sorted_company_name(@payments)
   end
 
-  # dito pwedeng ma view yung payments sa isang transaction
   def show
     @payment = Payment.find_by(params[:id])
   end
 
   def buy
     @payment = Payment.new
-    @stocks = []
-    @symbols = []
-    stocks = Stock.all
-    stocks.each do |stock|
-      @stocks.push([stock.company_name, stock.id])
-      @symbols << [stock.symbol]
-    end
   end
 
   def sell
     @payment = Payment.new
-    @stocks = []
-    @symbols = []
-    stocks = Stock.all
-    stocks.each do |stock|
-      @stocks.push([stock.company_name, stock.id])
-      @symbols << [stock.symbol]
-    end
   end
-
-  def new
-    @payment = Payment.new
-    @stocks = []
-    @symbols = []
-    stocks = Stock.all
-    stocks.each do |stock|
-      @stocks.push([stock.company_name, stock.id])
-      @symbols << [stock.symbol]
-    end
-  end
-  # i want to dynamically calculate quantity when user indicates the amount he wants to purchase
 
   def create
     client = IEX::Api::Client.new(
@@ -55,22 +27,15 @@ class PaymentsController < ApplicationController
     stocks = Stock.all
     @payment = Payment.new(payment_params)
     @payment.user_id = current_user.id
-    @payment.wallet_id = current_user.id
+    @payment.wallet_id = 1 # value needs to be replaced with dynamic user_id
     @payment.time_placed = Time.now
     @payment.current_price = client.price(stocks[@payment.stock_id].symbol)
     
-    @stocks = []
-    @symbols = []
-    stocks = Stock.all
-    stocks.each do |stock|
-      @stocks.push([stock.company_name, stock.id])
-      @symbols << [stock.symbol]
-    end
-
     if @payment.save
-      redirect_to payments_path
+      redirect_to stocks_path
     else
-      render :new
+      puts params
+      redirect_back fallback_location: payments_path
     end
   end
 

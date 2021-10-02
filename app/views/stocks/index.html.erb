@@ -1,8 +1,15 @@
+<%= render "shared/navbar" %>
+<div class="stocks-main">
+  <h2> Stock Market </h2>
+  <div class="stocks-container" >
+    <% @stocks.each do |stock| %>
+  
+      <div class="stock-item"> 
+          <img src=<%= stock.logo_url %> alt=<%= stock.symbol %> >
+          <h3> <%= stock.company_name %></h3>
 
-<div> 
-  <% @stocks.each do |stock| %>
-    <h1> <%= stock.company_name %></h1>
-
-    <%= link_to "View", stock_path(stock.id), class: "btn btn-primary", method: "get" %>
-  <% end %>
+          <%= link_to "View", stock_path(stock.id), class: "btn btn-outline-secondary", method: "get" %>
+      </div>
+    <% end %>
+  </div>
 </div>
