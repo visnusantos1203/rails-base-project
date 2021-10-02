@@ -27,7 +27,7 @@ class PaymentsController < ApplicationController
     stocks = Stock.all
     @payment = Payment.new(payment_params)
     @payment.user_id = current_user.id
-    @payment.wallet_id = 1 # value needs to be replaced with dynamic user_id
+    @payment.wallet_id = current_user.id # value needs to be replaced with dynamic user_id
     @payment.time_placed = Time.now
     @payment.current_price = client.price(stocks[@payment.stock_id].symbol)
     
