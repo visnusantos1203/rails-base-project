@@ -18,7 +18,7 @@
         display: flex;
         justify-content: space-between;
         .nav-link{
-          color: white;
+          color: #86298B;
           font-size: 1.1rem;
         }
         p{
@@ -37,6 +37,15 @@
       height: 7rem;
     }
   }
+}
+.offcanvas-title{
+  display: flex;
+  justify-content: center;
+  width: 95%;
+  .wallet-logo{
+    width: 15rem;
+    height: 6rem;
+  }  
 }
 
 @media screen and (max-width: 990px) {

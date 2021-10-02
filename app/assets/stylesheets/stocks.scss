@@ -1,16 +1,83 @@
 // Place all the styles related to the stocks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-.chart{
-  min-width: 50vw;
-  width: 60vw;
-  min-height: 40vh;
-  border: 1px solid black;
-  margin: 3rem auto auto;
+.stocks-main{
+  padding-top: 5rem;
+  h2{
+    margin-inline-start: 10vw;
+  }
+  .stocks-container{
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    max-height: 85vh;
+    overflow: scroll;
+    padding: 2rem;
+    margin: 0 auto auto;
+    border: 1px solid black;
+    .stock-item{
+      display:flex;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      margin-bottom: .5rem;
+      background-color: #EEE6EE;
+      img{
+        height: auto;
+        width: 3rem;
+        padding: .2rem;
+        border-radius: 9px;
+      }
+      h3{
+        width: 75%;
+        text-align: left;
+      }
+      a{
+        width: 15%;
+        height: 2.5rem;
+      }
+    }
+  }
 }
-.price-container{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  width: 100%;
+
+/* SHOW CONTROLLER */
+.stock-main{
+  padding: 5vw 8vw 8vw;
+  h1{
+    text-align: center;
+  }
+  .chart{
+    min-width: 50vw;
+    //width: 70vw;
+    min-height: 40vh;
+    border: 1px solid black;
+    margin: 3rem auto auto;
+    #myChart{
+      min-height: 50vh;
+      padding: 1rem;
+      font: 1em;
+      border: none;
+    }
+  }
+  .price-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    div{
+      border: 1px solid black;
+      width: 100%;
+      button{
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media all and (min-width: 400px) {
+  .price-container{
+    display: flex;
+    flex-direction: column;
+  }
 }
