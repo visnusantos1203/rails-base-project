@@ -11,7 +11,7 @@ Stock.destroy_all
   company_info = client.company(all_symbols[index].symbol)
 
   begin
-    Stock.create(symbol: all_symbols[index].symbol, company_name: company_info.company_name, description: company_info.description)
+    Stock.create(symbol: all_symbols[index].symbol, company_name: company_info.company_name, description: company_info.description, logo_url: "https://storage.googleapis.com/iex/api/logos/#{all_symbols[index].symbol}.png")
   rescue  StandardError
     nil
   end
