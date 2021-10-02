@@ -29,10 +29,9 @@ class AdminsController < ApplicationController
   def create_user;
     @create_user = User.new(params.require(:user).permit(:first_name, :last_name, :username, :email, :password))
     @create_user.approved = true
-    @create_user.wallet_id = @create_user.id
 
     if @create_user.save
-      redirect_to root_path
+      redirect_to admins_dashboard_path
     else
       redirect_back fallback_location: admins_dashboard_path
     end
