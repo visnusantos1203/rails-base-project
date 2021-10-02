@@ -14,12 +14,14 @@ class User < ApplicationRecord
   private 
 
   def send_welcome_email
-    WelcomeMailer.welcome_email(email).deliver_now if approved == false
-    WelcomeMailer.welcome_email(email).deliver_now if approved == true
+    WelcomeMailer.welcome_email(email).deliver_now
   end
 
   def create_user_wallet
-    user_wallet = Wallet.create(user_id: User.last.id, balance: 100_000)
+    if wallet == nil
+      user_wallet = Wallet.new(id: id, user_id: id, balance: 100_000, created_at: Time.now, updated_at: Time.now)
+      user_wallet.save
+    end
   end
 
 end
