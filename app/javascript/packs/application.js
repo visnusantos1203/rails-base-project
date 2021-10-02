@@ -9,6 +9,13 @@ import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import Chart from "chart.js/auto";
 
+require("jquery");
+import "bootstrap";
+// require("@rails/ujs").start(); # Pag naka uncomment to hindi gumagana yung chart.js
+require("turbolinks").start();
+require("@rails/activestorage").start();
+require("channels");
+
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
@@ -24,7 +31,6 @@ document.addEventListener("turbolinks:load", () => {
           label: "Price Index",
           backgroundColor: "rgba(255, 61, 133)",
           borderColor: "rgba(150, 150, 150)",
-          fill: false,
           data: JSON.parse(ctx.canvas.dataset.data),
         },
       ],
@@ -42,9 +48,4 @@ document.addEventListener("turbolinks:load", () => {
       },
     },
   });
-}); // Uncomment to copy all static images under ../images to the output folder and reference
-// them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
-// or the `imagePath` JavaScript helper below.
-//
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
+});
