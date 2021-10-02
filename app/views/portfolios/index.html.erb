@@ -1,26 +1,27 @@
-<canvas id="myChart" width="200px" height="100px" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>  
-
-<h1> My Portfolio </h1>
-
-<h2> Active investments </h2>
-
-<p> <%= sorted_company_name(@companies) %> </p>
-
-<% sorted_company_name(@companies).each do |company_name| %>
-  <h2> Company Name: <%= company_name[0] %> </h2>
+<%= render "shared/navbar" %>
+<div class="container portfolio-main">
+  <h1> My Portfolio </h1>
   <hr>
-
-  <% @payments.each do |payment| %>
-
-    <% if company_name[1] == payment.stock_id %>
-      <p> Payment ID: <%= payment.id %> </p>
-      <p> Stock ID: <%= payment.stock_id %> </p>
-      <p> Date purchased: <%= payment.time_placed.to_formatted_s(:long) %> </p>
-      <p> Quantity purchased: <%= payment.quantity %> </p>
-      <p> Price: <%= payment.current_price %> </p>
+  <% if @payments.empty? %>
+    <p> Oops.. You haven't traded yet. Click <%= link_to "here", stocks_path, method: "get" %> to start trading. </p>
+  <% else %>
+    <% sorted_company_name(@companies).each do |company_name| %>
+      <h2> <%= company_name[0] %> </h2>
       <hr>
+
+      <% @payments.each do |payment| %>
+
+        <% if company_name[1] == payment.stock_id %>
+          <p> User ID: <%= payment.user_id %> </p>
+          <p> Payment ID: <%= payment.id %> </p>
+          <p> Stock ID: <%= payment.stock_id %> </p>
+          <p> Date purchased: <%= payment.time_placed.to_formatted_s(:long) %> </p>
+          <p> Quantity purchased: <%= payment.quantity %> </p>
+          <p> Price: <%= payment.current_price %> </p>
+          <hr>
+        <% end %>
+
+      <% end %>
     <% end %>
-
   <% end %>
-
-<% end %>
+</div>

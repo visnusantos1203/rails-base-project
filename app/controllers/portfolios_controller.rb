@@ -3,23 +3,12 @@ class PortfoliosController < ApplicationController
   # dito sana naka list lang lahat ng companies na may investment si user
   def index
     # @payments = Payment.where(user_id: current_user.id).order('ASC')
-    @payments = Payment.all
+    @payments = Payment.all.where(user_id: current_user.id)
     @companies = []
     @payments.each do |payment|
       company = Stock.find_by(id: payment.stock_id)
       @companies.push([company.company_name, payment.stock_id])
     end
-
-    @data_keys = [
-      'January',
-      'February',
-      'March',
-      'April',
-      'May',
-      'June',
-    ]
-    @data_values = [0, 10, 5, 2, 20, 30, 45]
-    # @name = @payments.stock_id.company_name
   end
 
   # dito pwedeng ma view yung payments sa isang transaction
