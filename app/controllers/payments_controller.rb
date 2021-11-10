@@ -19,11 +19,7 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    client = IEX::Api::Client.new(
-      publishable_token: 'Tpk_01273dfe6905454eb34261aa36cd7198',
-      secret_token: 'secret_token',
-      endpoint: 'https://sandbox.iexapis.com/stable'
-    )
+    client = CallApi.call
     stocks = Stock.all
     @payment = Payment.new(payment_params)
     @payment.user_id = current_user.id
