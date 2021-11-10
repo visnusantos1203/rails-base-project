@@ -18,7 +18,9 @@ gem 'hamlit-rails'
 
 gem 'bootstrap', '~> 5.1.0'
 gem 'iex-ruby-client'
-gem "chartkick"
+gem 'chartkick'
+gem 'resque'
+gem 'whenever', :require => false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
