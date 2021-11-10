@@ -1,4 +1,6 @@
 class Stock < ApplicationRecord
-  validates :symbol, :company_name, :description, :logo_url, presence: true
+  serialize :price_history, Array
+
+  validates :symbol, :company_name, :description, :logo_url, :price_history, presence: true
   has_many :payments
 end
