@@ -2,11 +2,18 @@
 <div class="stocks-main">
   <h2> Stock Market </h2>
   <div class="stocks-container" >
-    <% @stocks.each do |stock| %>
-  
+    <div class="title">
+      <p> Logo </p>
+      <p> Company Name </p>
+    </div>
+    
+    <% @stocks.each_with_index do |stock, index| %>
       <div class="stock-item"> 
           <img src=<%= stock.logo_url %> alt=<%= stock.symbol %> >
           <h3> <%= stock.company_name %></h3>
+          <div class="container-fluid chart">
+            <canvas id="myChart<%= index + 1 %>" width="200" height="100%" data-labels="<%= stock.price_history %>" data-data="<%= stock.price_history %>" ></canvas>  
+          </div>
 
           <%= link_to "View", stock_path(stock.id), class: "btn btn-outline-secondary", method: "get" %>
       </div>

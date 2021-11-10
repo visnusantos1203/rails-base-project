@@ -7,14 +7,14 @@
       <h3>Price:</h3> 
       <h2> <%= @price %> </h2>
     </div>
-    <div>
+    <div class="buy-sell-container">
       <%= link_to "Buy", payment_buy_path(id: @stock.id, transaction_type: 1), class: "btn btn-danger ", method: "get" %>
       <%= link_to "Sell", payment_sell_path(id: @stock.id, transaction_type: 0), class: "btn btn-success", method: "get" %>
     </div>
   </div>
 
   <div class="container-fluid chart">
-    <canvas id="myChart" width="400" height="auto" data-labels="<%= @data_keys %>" data-data="<%= @data_values %>" ></canvas>  
+    <canvas id="myChart<%= @stock.id%>" curve="true" width="400" height="auto" data-labels="<%= get_chart_data(@stock)[:data_keys] %>" data-data="<%= @stock.price_history %>" ></canvas>  
   </div>
 
   <h3> Description </h3>

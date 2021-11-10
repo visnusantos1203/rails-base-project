@@ -1,20 +1,33 @@
 // Place all the styles related to the stocks controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.nav-link{
+  color: purple !important;
+}
 .stocks-main{
   padding-top: 5rem;
+  background-color: whitesmoke;
   h2{
     margin-inline-start: 10vw;
   }
   .stocks-container{
     display: flex;
     flex-direction: column;
-    max-width: 700px;
+    max-width: 900px;
     max-height: 85vh;
     overflow: scroll;
     padding: 2rem;
     margin: 0 auto auto;
-    border: 1px solid black;
+    //border: 1px solid black;
+    .title{
+      position: sticky;
+      background-color: white;
+      p{
+        display: inline-block;
+        padding: 0 1rem;
+      }
+    }
     .stock-item{
       display:flex;
       flex-direction: row;
@@ -68,8 +81,16 @@
     div{
       border: 1px solid black;
       width: 100%;
-      button{
-        width: 100%;
+    }
+    .buy-sell-container{
+      display: flex;
+      justify-content: center;
+      align-content: center;
+      .btn{
+        height: 3rem;
+        margin: 1rem;
+        border-radius: 30%;
+        text-align: center;
       }
     }
   }
