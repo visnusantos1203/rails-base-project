@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   patch '/admins/approved_users/:id', to: 'admins#modify_user'
   get '/admins/approved_users/:id/edit', to: 'admins#edit_user', as: :edit_user_profile
   get '/admins/all_transactions', to: 'admins#all_transactions', as: :user_transactions
-  
+
 end
