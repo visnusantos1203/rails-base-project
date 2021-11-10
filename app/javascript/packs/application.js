@@ -20,32 +20,37 @@ Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
-document.addEventListener("turbolinks:load", () => {
-  const ctx = document.getElementById("myChart").getContext("2d");
-  const myChart = new Chart(ctx, {
-    type: "line",
-    data: {
-      labels: JSON.parse(ctx.canvas.dataset.labels),
-      datasets: [
-        {
-          label: "Price Index",
-          backgroundColor: "rgba(255, 61, 133)",
-          borderColor: "rgba(150, 150, 150)",
-          data: JSON.parse(ctx.canvas.dataset.data),
-        },
-      ],
-    },
-    options: {
-      scales: {
-        y: {
-          ticks: {
-            // Include a dollar sign in the ticks
-            callback: function (value, index, values) {
-              return "$" + value;
-            },
+let num = 98;
+let ctx;
+
+for(let i = 1; i <= num; i++){
+
+  document.addEventListener("turbolinks:load", () => {
+    ctx = document.getElementById(`myChart${i}`).getContext("2d");
+    const myChart = new Chart(ctx, {
+      type: "line",
+      data: {
+        labels: JSON.parse(ctx.canvas.dataset.labels),
+        datasets: [
+          {
+            label: "Price Index",
+            backgroundColor: "rgba(255, 61, 133)",
+            borderColor: "rgba(150, 150, 150)",
+            data: JSON.parse(ctx.canvas.dataset.data),
           },
-        },
+        ],
       },
-    },
+      options: {
+        tooltips: {
+          callbacks: {
+            label: function(tooltipItem) {
+              return tooltipItem.yLabel;
+            }
+          }
+        }
+      }
+    });
   });
-});
+
+};
+
