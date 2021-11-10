@@ -18,7 +18,7 @@
         display: flex;
         justify-content: space-between;
         .nav-link{
-          color: #86298B;
+          color: white;
           font-size: 1.1rem;
         }
         p{
@@ -38,14 +38,106 @@
     }
   }
 }
-.offcanvas-title{
-  display: flex;
-  justify-content: center;
-  width: 95%;
-  .wallet-logo{
-    width: 15rem;
-    height: 6rem;
-  }  
+.offcanvas{
+  width: 20vw;
+  min-width: 400px;
+  //padding: 1rem;
+  .btn-close{
+    align-self: flex-end;
+    padding: 1rem;
+  }
+  .offcanvas-header{
+    padding: 0;
+    .offcanvas-title{
+      display: flex;
+      justify-content: center;
+      width: 95%;
+      .wallet-logo{
+        width: 13rem;
+        height: 7rem;
+        padding: 0;
+      }
+    }
+  }
+  .offcanvas-body{
+    padding: 0;
+    .my-wallet{
+      background-color: #86298B;
+      width: 85%;
+      text-align: center;
+      color: white;
+      height: 2rem;
+      padding: .2em 0 0 4rem;
+    }
+    .total-bal{
+      background-color: #86298B;
+      width: 60%;
+      text-align: center;
+      color: white;
+      height: 2rem;
+      padding: .2em;
+      margin-top: 1rem;
+    }
+    .total-bal-container{
+      padding: 0 4rem;
+      .bal-amount{
+        text-align: right;
+        font-family: roboto;
+      }
+    }
+    .latest-transactions{
+      text-align: center;
+    }
+    .transactions-container{
+      padding: 0 3rem;
+      margin-top: 2rem;
+      overflow-y: scroll;
+      .transaction-item{
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        background-color: rgb(243, 243, 243);
+        margin-bottom: 1px;
+        overflow: scroll;
+        max-height: 35vh;
+        scrollbar-width: none;
+        span{
+          width: 30%;
+          text-align: center;
+        }
+      }
+      :last-child{
+        text-align: right;
+      }
+    }
+    
+  }
+  .rect-1{
+    position: absolute;
+    width: 30px;
+    height: 228px;
+    left: 87px;
+    top: 80vh;
+    background: #652D90;
+  }
+  .rect-2{
+    position: absolute;
+    width: 254px;
+    height: 41px;
+    left: 146px;
+    top: 84vh;
+
+    background: #652D90;
+  }
+  .rect-3{
+    position: absolute;
+    width: 363px;
+    height: 41px;
+    left: 37px;
+    top: 90vh;
+
+    background: #652D90;
+  }
 }
 
 @media screen and (max-width: 990px) {

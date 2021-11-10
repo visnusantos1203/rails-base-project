@@ -51,29 +51,37 @@
 </nav>
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="offcanvasExampleLabel">
+  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  
   <div class="offcanvas-header">
     <div class="offcanvas-title" id="offcanvasExampleLabel">
-      <%= image_tag("stockscrowd_logo_2.png", class: "wallet-logo") %>
+      <a class="navbar-brand" href="/"> <%= image_tag("stockscrowd_logo_2.png", class: "wallet-logo") %> </a>
     </div>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-    <h4> My Wallet </h4>
+    <h5 class="my-wallet"> My Wallet </h5>
 
-    <div>
-      <h4> Total balance </h4>
-      <h4> <%= current_user %> <h4>
+    <h5 class="total-bal"> Total balance </h5>
+    <div class="total-bal-container">
+      <h3 class="bal-amount"> $<%= Wallet.where(:user_id == 1)[0].balance %> <h3>
       <hr>
     </div>
-    <div class="dropdown mt-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
+
+    <h5 class="latest-transactions"> Latest Transactions </h5>
+
+    <div class="transactions-container">
+      <% Payment.where(:user_id == current_user).each do |transaction|%>
+        <div class="transaction-item">
+          <span><%= Stock.find(transaction.stock_id).symbol %> </span>
+          <span>$<%= (transaction.quantity * transaction.current_price) %> </span>
+          <span><%= transaction.transaction_type %> </span>
+        </div>
+      <% end %>
+      <div>
+        <%= link_to "See all transactions", payments_path, method: :get %>
+      </div>
     </div>
+
   </div>
+
 </div>

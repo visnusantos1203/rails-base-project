@@ -4,7 +4,7 @@
     <%= f.number_field :quantity %>
   </div>
   <%= f.hidden_field :stock_id, value: params[:id] %>
-  <%= f.hidden_field :transaction_type, value: params[:transaction_type] ? "buy" : "sell" %>
+  <%= f.hidden_field :transaction_type, value: params[:transaction_type] == 1 ? "buy" : "sell" %>
 
   <div>
     <%= f.submit class: 'btn btn-outline-primary btn-sm' %>
