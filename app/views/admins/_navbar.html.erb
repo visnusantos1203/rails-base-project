@@ -5,48 +5,10 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="nav-menu">
       <span class="navbar-toggler-icon"></span>
     </button>
-    
-    <div class="collapse navbar-collapse" id="nav-menu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link" href="/stocks">Market</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/portfolios">My Portfolio</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="offcanvas"  data-bs-target="#sidebar" role="button" aria-controls="offcanvasExample">
-            My Wallet
-          </a>
-        </li>
-        <% if current_admin %>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Account
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">My Account</a></li>
-              <li><%= link_to 'Logout', destroy_admin_session_path, method: :delete , class: "dropdown-item" %></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Upgrade to Premium</a></li>
-            </ul>
-          </li>
-        <% end %>
-        <li class="nav-item">
-          <% unless current_admin %>
-            <%= link_to 'Signup', new_admin_registration_path, class: 'nav-link active', aria_current: "page" %>
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <% if current_admin %>
-            <li><%= link_to 'Logout', destroy_admin_session_path, method: :delete , class: 'nav-link active' %></li>
-          <% else %>
-            <%= link_to 'Login', new_admin_session_path, class: 'nav-link active', aria_current: "page" %>
-          <% end %>
-        </li>
-        </li>
-      </ul>
-    </div>
+
+    <li class="nav-item">
+      <li><%= link_to 'Logout', destroy_admin_session_path, method: :delete , class: 'nav-link active' %></li>
+    </li>
   </div>
 </nav>
 
