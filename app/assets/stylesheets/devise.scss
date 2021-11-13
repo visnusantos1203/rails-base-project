@@ -1,59 +1,130 @@
 .signup-main{
   display: flex;
-  flex-direction: row;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='900' preserveAspectRatio='none' viewBox='0 0 1440 900'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1878%26quot%3b)' fill='none'%3e%3crect width='1440' height='900' x='0' y='0' fill='rgba(134%2c 41%2c 139%2c 1)'%3e%3c/rect%3e%3crect width='456' height='456' clip-path='url(%26quot%3b%23SvgjsClipPath1879%26quot%3b)' x='327.96' y='578.92' fill='url(%23SvgjsPattern1880)' transform='rotate(101.5%2c 555.96%2c 806.92)'%3e%3c/rect%3e%3cpath d='M1214.32 326.82a5.6 5.6 0 1 0 3.94 10.48 5.6 5.6 0 1 0-3.94-10.48zM1219.96 341.79a5.6 5.6 0 1 0 3.94 10.48 5.6 5.6 0 1 0-3.94-10.48zM1225.6 356.76a5.6 5.6 0 1 0 3.94 10.48 5.6 5.6 0 1 0-3.94-10.48zM1231.24 371.73a5.6 5.6 0 1 0 3.94 10.49 5.6 5.6 0 1 0-3.94-10.49zM1188.06 302.51a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48zM1193.7 317.48a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48zM1199.34 332.46a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48zM1204.98 347.43a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48zM1161.81 278.2a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48zM1167.45 293.18a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48zM1173.09 308.15a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48zM1178.73 323.12a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48z' fill='rgba(255%2c 255%2c 255%2c 1)'%3e%3c/path%3e%3ccircle r='75' cx='626.22' cy='505.14' fill='rgba(255%2c 255%2c 255%2c 1)'%3e%3c/circle%3e%3crect width='348' height='348' clip-path='url(%26quot%3b%23SvgjsClipPath1881%26quot%3b)' x='526.73' y='-106.85' fill='url(%23SvgjsPattern1882)' transform='rotate(305.31%2c 700.73%2c 67.15)'%3e%3c/rect%3e%3cpath d='M1423.28 1042.81 L1382.7199999999998 1047.3L1421.8617417843643 1063.9167417843641z' stroke='rgba(46%2c 49%2c 139%2c 1)' stroke-width='2.01'%3e%3c/path%3e%3crect width='408' height='408' clip-path='url(%26quot%3b%23SvgjsClipPath1883%26quot%3b)' x='53.79' y='146.69' fill='url(%23SvgjsPattern1884)' transform='rotate(167.22%2c 257.79%2c 350.69)'%3e%3c/rect%3e%3crect width='572.4' height='572.4' clip-path='url(%26quot%3b%23SvgjsClipPath1885%26quot%3b)' x='63.28' y='95.6' fill='url(%23SvgjsPattern1886)' transform='rotate(66.04%2c 349.48%2c 381.8)'%3e%3c/rect%3e%3crect width='135.2' height='135.2' clip-path='url(%26quot%3b%23SvgjsClipPath1887%26quot%3b)' x='5.51' y='380.76' fill='url(%23SvgjsPattern1888)' transform='rotate(192.75%2c 73.11%2c 448.36)'%3e%3c/rect%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1878'%3e%3crect width='1440' height='900' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cpattern x='0' y='0' width='456' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern1880'%3e%3crect width='456' height='3' x='0' y='0' fill='rgba(46%2c 49%2c 139%2c 1)'%3e%3c/rect%3e%3crect width='456' height='3' x='0' y='3' fill='rgba(0%2c 0%2c 0%2c 0)'%3e%3c/rect%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1879'%3e%3ccircle r='114' cx='555.96' cy='806.92'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='6' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern1882'%3e%3cpath d='M0 6L3 0L6 6' stroke='rgba(46%2c 49%2c 139%2c 1)' fill='none'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1881'%3e%3ccircle r='87' cx='700.73' cy='67.15'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='6' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern1884'%3e%3cpath d='M3 1L3 5M1 3L5 3' stroke='rgba(46%2c 49%2c 139%2c 1)' fill='none' stroke-width='1.05'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1883'%3e%3ccircle r='102' cx='257.79' cy='350.69'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='6.36' height='6.36' patternUnits='userSpaceOnUse' id='SvgjsPattern1886'%3e%3cpath d='M3.18 1L3.18 5.36M1 3.18L5.36 3.18' stroke='rgba(255%2c 255%2c 255%2c 1)' fill='none' stroke-width='1.47'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1885'%3e%3ccircle r='143.1' cx='349.48' cy='381.8'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='13.52' height='13.52' patternUnits='userSpaceOnUse' id='SvgjsPattern1888'%3e%3cpath d='M0 13.52L6.76 0L13.52 13.52' stroke='rgba(255%2c 255%2c 255%2c 1)' fill='none'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1887'%3e%3ccircle r='33.8' cx='73.11' cy='448.36'%3e%3c/circle%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e");
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+  //background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='900' preserveAspectRatio='none' viewBox='0 0 1440 900'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1878%26quot%3b)' fill='none'%3e%3crect width='1440' height='900' x='0' y='0' fill='rgba(134%2c 41%2c 139%2c 1)'%3e%3c/rect%3e%3crect width='456' height='456' clip-path='url(%26quot%3b%23SvgjsClipPath1879%26quot%3b)' x='327.96' y='578.92' fill='url(%23SvgjsPattern1880)' transform='rotate(101.5%2c 555.96%2c 806.92)'%3e%3c/rect%3e%3cpath d='M1214.32 326.82a5.6 5.6 0 1 0 3.94 10.48 5.6 5.6 0 1 0-3.94-10.48zM1219.96 341.79a5.6 5.6 0 1 0 3.94 10.48 5.6 5.6 0 1 0-3.94-10.48zM1225.6 356.76a5.6 5.6 0 1 0 3.94 10.48 5.6 5.6 0 1 0-3.94-10.48zM1231.24 371.73a5.6 5.6 0 1 0 3.94 10.49 5.6 5.6 0 1 0-3.94-10.49zM1188.06 302.51a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48zM1193.7 317.48a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48zM1199.34 332.46a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48zM1204.98 347.43a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48zM1161.81 278.2a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48zM1167.45 293.18a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48zM1173.09 308.15a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48zM1178.73 323.12a5.6 5.6 0 1 0 3.95 10.48 5.6 5.6 0 1 0-3.95-10.48z' fill='rgba(255%2c 255%2c 255%2c 1)'%3e%3c/path%3e%3ccircle r='75' cx='626.22' cy='505.14' fill='rgba(255%2c 255%2c 255%2c 1)'%3e%3c/circle%3e%3crect width='348' height='348' clip-path='url(%26quot%3b%23SvgjsClipPath1881%26quot%3b)' x='526.73' y='-106.85' fill='url(%23SvgjsPattern1882)' transform='rotate(305.31%2c 700.73%2c 67.15)'%3e%3c/rect%3e%3cpath d='M1423.28 1042.81 L1382.7199999999998 1047.3L1421.8617417843643 1063.9167417843641z' stroke='rgba(46%2c 49%2c 139%2c 1)' stroke-width='2.01'%3e%3c/path%3e%3crect width='408' height='408' clip-path='url(%26quot%3b%23SvgjsClipPath1883%26quot%3b)' x='53.79' y='146.69' fill='url(%23SvgjsPattern1884)' transform='rotate(167.22%2c 257.79%2c 350.69)'%3e%3c/rect%3e%3crect width='572.4' height='572.4' clip-path='url(%26quot%3b%23SvgjsClipPath1885%26quot%3b)' x='63.28' y='95.6' fill='url(%23SvgjsPattern1886)' transform='rotate(66.04%2c 349.48%2c 381.8)'%3e%3c/rect%3e%3crect width='135.2' height='135.2' clip-path='url(%26quot%3b%23SvgjsClipPath1887%26quot%3b)' x='5.51' y='380.76' fill='url(%23SvgjsPattern1888)' transform='rotate(192.75%2c 73.11%2c 448.36)'%3e%3c/rect%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1878'%3e%3crect width='1440' height='900' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cpattern x='0' y='0' width='456' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern1880'%3e%3crect width='456' height='3' x='0' y='0' fill='rgba(46%2c 49%2c 139%2c 1)'%3e%3c/rect%3e%3crect width='456' height='3' x='0' y='3' fill='rgba(0%2c 0%2c 0%2c 0)'%3e%3c/rect%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1879'%3e%3ccircle r='114' cx='555.96' cy='806.92'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='6' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern1882'%3e%3cpath d='M0 6L3 0L6 6' stroke='rgba(46%2c 49%2c 139%2c 1)' fill='none'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1881'%3e%3ccircle r='87' cx='700.73' cy='67.15'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='6' height='6' patternUnits='userSpaceOnUse' id='SvgjsPattern1884'%3e%3cpath d='M3 1L3 5M1 3L5 3' stroke='rgba(46%2c 49%2c 139%2c 1)' fill='none' stroke-width='1.05'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1883'%3e%3ccircle r='102' cx='257.79' cy='350.69'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='6.36' height='6.36' patternUnits='userSpaceOnUse' id='SvgjsPattern1886'%3e%3cpath d='M3.18 1L3.18 5.36M1 3.18L5.36 3.18' stroke='rgba(255%2c 255%2c 255%2c 1)' fill='none' stroke-width='1.47'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1885'%3e%3ccircle r='143.1' cx='349.48' cy='381.8'%3e%3c/circle%3e%3c/clipPath%3e%3cpattern x='0' y='0' width='13.52' height='13.52' patternUnits='userSpaceOnUse' id='SvgjsPattern1888'%3e%3cpath d='M0 13.52L6.76 0L13.52 13.52' stroke='rgba(255%2c 255%2c 255%2c 1)' fill='none'%3e%3c/path%3e%3c/pattern%3e%3cclipPath id='SvgjsClipPath1887'%3e%3ccircle r='33.8' cx='73.11' cy='448.36'%3e%3c/circle%3e%3c/clipPath%3e%3c/defs%3e%3c/svg%3e");
   width: 100vw;
-  height: 100vh;
-  .signup-header{
+  height: 100vh !important;
+  margin: 0 auto;
+  background-color: white;
+  overflow: hidden;
+
+  #one{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
-    //border: 1px solid white;
-    padding: 3rem;
-    width: 50%;
-    #tagline-1{
-      color: white;
-      font-family: 'Reenie Beanie', cursive;
-      font-size: 4rem;
-      text-align: center;
+    justify-content: center;
+    align-content: center;
+    //margin-left:auto;
+    //border: 1px solid black;
+    //background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1500' height='900' preserveAspectRatio='none' viewBox='0 0 1200 900'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1097%26quot%3b)' fill='none'%3e%3crect width='1200' height='900' x='0' y='0' fill='url(%23SvgjsRadialGradient1098)'%3e%3c/rect%3e%3cpath d='M802.39 395.84 a160.38 160.38 0 1 0 320.76 0 a160.38 160.38 0 1 0 -320.76 0z' fill='rgba(111%2c 5%2c 188%2c 0.13)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M-308.34 259.07 0 1 0 565.04 0 0 1 0 -565.04 0z' fill='rgba(111%2c 5%2c 188%2c 0.23)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M300.99 59.77  0 1 0 588.4 0  0 1 0 -588.4 0z' fill='rgba(111%2c 5%2c 188%2c 0.23)' class='triangle-float2'%3e%3c/path%3e%3cpath d='M-3.15 630.1 a165.37 165.37 0 1 0 330.74 0 a165.37 165.37 0 1 0 -330.74 0z' fill='rgba(111%2c 5%2c 188%2c 0.23)' class='triangle-float2'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1097'%3e%3crect width='1200' height='900' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cradialGradient cx='50%25' cy='100%25' r='1081.67' gradientUnits='userSpaceOnUse' id='SvgjsRadialGradient1098'%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 1)' offset='0'%3e%3c/stop%3e%3cstop stop-color='rgba(255%2c 255%2c 255%2c 0)' offset='0'%3e%3c/stop%3e%3c/radialGradient%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-color: white;
+    a > img{
+      position: absolute;
+      width: 200px;
+      height: 100px;
+      top: 3%;
+      left: 5%;
     }
-    #tagline-2{
-      width: 90%;
-      color: white;
-      font-family: 'Reem Kufi', sans-serif;
-      font-size: 2.5rem;
-      text-align: right;
-      justify-self: right;
+
+    // Ellipses
+    .ellipse{
+      position: absolute;
+      border-radius: 50%;
+      background-color: red;
     }
-    nav{
-      background-color: white;
+    .e1{
+      width: 114px;
+      height: 108px;
+      background-color: #86298B;;
+      top:78%;
+      left: 60%;
+      z-index: 1 !important;
+    }
+    .e2{
+      width: 127px;
+      height: 120px;
+      left: 94%;
+      top: 90%;
+      background-color: #2E318B;
+    }
+    .e3{
+      width: 770px;
+      height: 730px;
+      background-color: #FFEEFF;
+      top: 35%;
+      right: 60%;
+      z-index: 1;
+    }
+    // Headline
+    .headline{
       display: flex;
-      justify-content: space-around;
-      algin-items: center;
-      width: 95%;
-      height: 2.5rem;
-      a{
-        text-decoration: none;
+      width: 600px;
+      min-height: 10rem;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      padding-top: 6rem;
+      //border: 1px solid black;
+      p{
         text-align: center;
+        font-size: 55px;
+        font-weight: 900;
+        font-family: 'Montserrat', sans-serif;
+        line-height: 58px;
+        z-index: 10;
+      }
+      #investment{
         color: #86298B;
-        font-size: 1.3rem;
+      }
+      #sub-text{
+        margin-bottom: 0;
+        font-weight:lighter;
+        font-size: 30px;
+        z-index: 10;
+      }
+      a{
+        width: 10vw;
+        margin-left: auto;
+        margin-right: auto;
       }
     }
+    svg{
+      width: 389px;
+      height: 250px;
+      min-height: 5rem;
+      margin: 0 auto;
+      z-index: 10;
+      //border: 1px solid black;
+    }
   }
+
+  // Form
   .signup-container{
-    width:25rem;
-    height: 35rem;
+    width: 25rem !important;
+    height: 35rem !important;
+  }
+  .form-container{
+    width:23rem;
+    height: 30rem;
     background-color: white;
-    border-radius: 9px;
+    box-shadow: 0px 0px 8px 1px rgba(90, 90, 90, 0.205);
+    border-radius: 15px;
     padding: 1rem 3rem 3rem;
-    margin: auto;
+    margin: auto 0;
+    //margin-right: auto;
     font-family: 'Roboto', sans-serif;
+    z-index: 10;
     img{
       height: 7rem;
       width: 70%;
       margin-left: 3rem;
     }
     h2{
+      margin-top: 5rem;
+      margin-bottom: 2rem;
       text-align: center;
       color: #86298B;
       font-weight: bold;
@@ -63,7 +134,7 @@
         width: inherit;
         display: flex;
         flex-direction: row;
-        gap: .5em;
+        gap: 1em;
       }
       input{
         border-radius: 9px;
@@ -72,6 +143,7 @@
         color: grey;
       }
       .actions{
+        margin-top: 1rem;
         width: 100%;
         margin-left: auto;
         margin-right: auto;

@@ -1,61 +1,18 @@
 <div class="home-main">
-  <svg id="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#86298B" fill-opacity="1" d="M0,64L60,85.3C120,107,240,149,360,160C480,171,600,149,720,144C840,139,960,149,1080,165.3C1200,181,1320,203,1380,213.3L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>
-  <nav class="navbar navbar-expand-lg navbar-light">
-
-    <div class="container"> 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="nav-menu">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="nav-menu">
-        <ul class="navbar-nav mb-2 mb-lg-0">
-
-          <li class="nav-item">
-            <a class="nav-link" href="/stocks">Market</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/portfolios">My Portfolio</a>
-          </li>
-          <% if current_user %>
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Account
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">My Account</a></li>
-                <li><%= link_to 'Logout', destroy_user_session_path, method: :delete , class: "dropdown-item" %></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="#">Upgrade to Premium</a></li>
-              </ul>
-            </li>
-          <% end %>
-          <li class="nav-item">
-          <% if current_user %>
-              <p class='nav-link'> Welcome, <%= current_user.email %>! </p>
-              <% else %>
-              <%= link_to 'Signup', new_user_registration_path, class: 'nav-link active', aria_current: "page" %>
-            <% end %>
-          </li>
-          <% if current_user %>
-            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete , class: 'nav-link active' %></li>
-          <% else %>
-            <%= link_to 'Login', new_user_session_path, class: 'nav-link active', aria_current: "page" %>
-          <% end %>
-          </li>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+  <!--<svg id="wave" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#86298B" fill-opacity="1" d="M0,64L60,85.3C120,107,240,149,360,160C480,171,600,149,720,144C840,139,960,149,1080,165.3C1200,181,1320,203,1380,213.3L1440,224L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path></svg>-->
+  
+  <%= render "shared/navbar" %>
 
   <!-- Section One -->
   <section id="one">
+    <div class="ellipse e1"></div>
+    <div class="ellipse e2"></div>
+    <div class="ellipse e3"></div>
+
     <div class="headline">
-      <p id="stocks"> STOCKS </P>
-      <p id="crowd"> CROWD </P>
-
-      <%= link_to 'Get Started', new_user_session_path, class: 'btn btn-outline-primary btn-sm', :method => :get %>
-
+      <p id="investment"> INVESTMENT </P>
+      <p id="crowd"> IN KNOWLEDGE </P>
+      <p id="sub-text"> Pays The Best Interest </p>
     </div>
     <svg class="container svg" width="600" height="369" viewBox="0 0 600 369" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <g id="StocksCrowd-illustration">

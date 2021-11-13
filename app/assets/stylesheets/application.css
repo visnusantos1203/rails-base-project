@@ -19,13 +19,15 @@
   margin: 0;
   box-sizing: border-box;
 }
+
 body{
   background-attachment: fixed;
+  z-index: 2;
 }
 
 .notification{
   position: absolute;
   display: flex;
   flex-direction: column;
-  z-index: 2;
+  z-index: 3;
 }

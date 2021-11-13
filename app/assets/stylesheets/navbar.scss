@@ -3,6 +3,10 @@
   height: 5rem;
   position:absolute;
   z-index: 4;
+  .active{
+    border-bottom: 2px solid purple;
+    color: purple;
+  }
   .container{
     display: flex;
     justify-content: space-between;
@@ -16,14 +20,46 @@
       flex-grow: 0;
       .navbar-nav{
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
+        text-align: center;
+        width: 35vw;
+        .nav-link:active{
+          //text-decoration: underline !important;
+          border-bottom: 2px solid purple;
+          color: purple;
+        }
         .nav-link{
-          color: white;
+          color: black;
           font-size: 1.1rem;
+          font-weight: normal;
+          font-family: "Montserrat", sans-serif;
+          
         }
         p{
           margin: 0;
         }
+      }
+    }
+    .user-wallet-container{
+      display: flex;
+      width: fit-content;
+      a{
+        padding: 0 !important;
+        margin: 0 .5rem;
+      }
+      .user-icon{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        border: 1px solid black;
+      }
+      .wallet-icon{
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background-color: purple;
+        color: white;
+        padding: 2px;
       }
     }
   }

@@ -9,52 +9,58 @@
     <div class="collapse navbar-collapse" id="nav-menu">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
+          <a class="nav-link active" href="/">
+            Home
+          </a>
+        </li>
+        <li class="nav-item" >
           <a class="nav-link" href="/stocks">Market</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/portfolios">My Portfolio</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="offcanvas"  data-bs-target="#sidebar" role="button" aria-controls="offcanvasExample">
-            My Wallet
-          </a>
-        </li>
-        <% if current_user %>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Account
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li><a class="dropdown-item" href="#">My Account</a></li>
-              <li><%= link_to 'Logout', destroy_user_session_path, method: :delete , class: "dropdown-item" %></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Upgrade to Premium</a></li>
-            </ul>
-          </li>
-        <% end %>
+      
         <li class="nav-item">
           <% unless current_user %>
             <%= link_to 'Signup', new_user_registration_path, class: 'nav-link active', aria_current: "page" %>
           <% end %>
         </li>
         <li class="nav-item">
-          <% if current_user %>
-            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete , class: 'nav-link active' %></li>
-          <% else %>
+          <% unless current_user %>
             <%= link_to 'Login', new_user_session_path, class: 'nav-link active', aria_current: "page" %>
           <% end %>
         </li>
         </li>
       </ul>
+
+    </div>
+
+    <div class="user-wallet-container">
+      <% if current_user %>
+        <li class="nav-item dropdown">
+          <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= image_tag("User_icon.png", class: "user-icon") %>
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <li><a class="dropdown-item" href="#">My Account</a></li>
+            <li><%= link_to 'Logout', destroy_user_session_path, method: :delete , class: "dropdown-item" %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Upgrade to Premium</a></li>
+          </ul>
+        </li>
+      <% end %>
+      <a class="nav-link" data-bs-toggle="offcanvas"  data-bs-target="#sidebar" role="button" aria-controls="offcanvasExample">
+        <%= image_tag("Wallet_icon.png", class: "wallet-icon") %>
+      </a>
     </div>
   </div>
 </nav>
 
-<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebar" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="offcanvasRightLabel">
   <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   
   <div class="offcanvas-header">
-    <div class="offcanvas-title" id="offcanvasExampleLabel">
+    <div class="offcanvas-title" id="offcanvasRightLabel">
       <a class="navbar-brand" href="/"> <%= image_tag("stockscrowd_logo_2.png", class: "wallet-logo") %> </a>
     </div>
   </div>

@@ -2,8 +2,8 @@
 
   <%= render "devise/shared/error_messages", resource: resource %>
 
-  <div class="signup-container">
-    <%= image_tag("stockscrowd_logo_2.png") %>	
+  <div class="form-container">
+    
     <h2>Log in</h2>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -29,18 +29,7 @@
     <% end %>
   </div>
 
-  <div class="signup-header">
-    <p id="tagline-1"> Manage your investments with #StocksCrowd!</p>
-    <p id="tagline-2"> Stocks of the </br> Crowd	</br>
-        Stocks for the </br> Crowd
-    </p>
-    <nav>
-      <a href="/"> Home </a>
-      <a href="/"> Careers </a>
-      <a href="/"> About Us </a>
-      <a href="/"> Pricing </a>
-    </nav>
-  </div>
+  <%= render "shared/landing" %>
 
 </div>
 
