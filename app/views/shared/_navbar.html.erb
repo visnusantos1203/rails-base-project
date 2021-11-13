@@ -6,37 +6,27 @@
       <span class="navbar-toggler-icon"></span>
     </button>
     
-    <div class="collapse navbar-collapse" id="nav-menu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item">
-          <a class="nav-link active" href="/">
-            Home
-          </a>
-        </li>
-        <li class="nav-item" >
-          <a class="nav-link" href="/stocks">Market</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/portfolios">My Portfolio</a>
-        </li>
-      
-        <li class="nav-item">
-          <% unless current_user %>
-            <%= link_to 'Signup', new_user_registration_path, class: 'nav-link active', aria_current: "page" %>
-          <% end %>
-        </li>
-        <li class="nav-item">
-          <% unless current_user %>
-            <%= link_to 'Login', new_user_session_path, class: 'nav-link active', aria_current: "page" %>
-          <% end %>
-        </li>
-        </li>
-      </ul>
+    <% if user_signed_in? %>
+      <div class="collapse navbar-collapse" id="nav-menu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="/">
+              Home
+            </a>
+          </li>
+          <li class="nav-item" >
+            <a class="nav-link" href="/stocks">Market</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/portfolios">My Portfolio</a>
+          </li>
+        </ul>
 
-    </div>
+      </div>
+    <% end %>
 
     <div class="user-wallet-container">
-      <% if current_user %>
+      <% if user_signed_in? %>
         <li class="nav-item dropdown">
           <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <%= image_tag("User_icon.png", class: "user-icon") %>
@@ -48,10 +38,10 @@
             <li><a class="dropdown-item" href="#">Upgrade to Premium</a></li>
           </ul>
         </li>
+        <a class="nav-link" data-bs-toggle="offcanvas"  data-bs-target="#sidebar" role="button" aria-controls="offcanvasExample">
+          <%= image_tag("Wallet_icon.png", class: "wallet-icon") %>
+        </a>
       <% end %>
-      <a class="nav-link" data-bs-toggle="offcanvas"  data-bs-target="#sidebar" role="button" aria-controls="offcanvasExample">
-        <%= image_tag("Wallet_icon.png", class: "wallet-icon") %>
-      </a>
     </div>
   </div>
 </nav>
