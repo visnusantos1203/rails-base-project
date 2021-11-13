@@ -13,6 +13,9 @@
       <p id="investment"> INVESTMENT </P>
       <p id="crowd"> IN KNOWLEDGE </P>
       <p id="sub-text"> Pays The Best Interest </p>
+      <% unless user_signed_in? %>
+        <%= link_to "Get Started", new_user_session_path, class: "btn btn-outline-primary", method: "get" %>
+      <% end %>
     </div>
     <svg class="container svg" width="600" height="369" viewBox="0 0 600 369" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
       <g id="StocksCrowd-illustration">
