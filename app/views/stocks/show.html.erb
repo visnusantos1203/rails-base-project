@@ -1,30 +1,92 @@
 <%= render "shared/navbar" %>
 <div class="container-fluid stock-main">
-  <h1> <%= @stock.company_name %> (<%= @stock.symbol %>) </h1>
+  <div class="stock-main-info">
+    <div class="container-fluid stock-name-container">
+      <img src=<%= @stock.logo_url %> >
+      <h1> <%= @stock.company_name.upcase %></h1>
 
-  <div class="container-fluid price-container">
-    <div>
-      <h3>Price:</h3> 
-      <h2> <%= @price %> </h2>
+      <div class="buy-sell-container">
+        <%= button_to "BUY", payment_buy_path(id: @stock.id, transaction_type: 1), class: "btn btn-outline-danger ", method: "get" %>
+        <%= button_to "SELL", payment_sell_path(id: @stock.id, transaction_type: 0), class: "btn btn-outline-success", method: "get" %>
+      </div>
     </div>
-    <div class="buy-sell-container">
-      <%= link_to "Buy", payment_buy_path(id: @stock.id, transaction_type: 1), class: "btn btn-danger ", method: "get" %>
-      <%= link_to "Sell", payment_sell_path(id: @stock.id, transaction_type: 0), class: "btn btn-success", method: "get" %>
+
+    <div class="chart-price-container">
+      <div class="container-fluid chart">
+        <canvas id="myChart<%= @stock.id%>" curve="true" width="400" height="auto" data-labels="<%= get_chart_data(@stock)[:data_keys] %>" data-data="<%= @stock.price_history %>" ></canvas>  
+      </div>
+
+      <h3>Closing Price: $<%= @price %></h3> 
     </div>
   </div>
 
-  <div class="container-fluid chart">
-    <canvas id="myChart<%= @stock.id%>" curve="true" width="400" height="auto" data-labels="<%= get_chart_data(@stock)[:data_keys] %>" data-data="<%= @stock.price_history %>" ></canvas>  
+  <hr>
+
+  <div class="show-section-2">
+    <h2> Latest News </h2>
+    <div class="owl-carousel news-container">
+      <% @news.each do |news| %>
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h4> <%= news.source%> </h4>
+            <p class="card-title"><%= news.headline%></p>
+            <button type="button" class="btn btn-outline-primary-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+              Read More
+            </button>
+
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+              <div class="modal-dialog-scrollable">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <p> <%= news.summary %> </p>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Understood</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+    <hr/>
+
+    <div class="about-container">
+      <h3> About <%= @stock.company_name %> </h3>
+      <p> <%= @stock.description %> </p>
+    </div>
+
+    <div class="other-infos-container">
+        <div>
+          <%= image_tag("CEO_icon.png", class: "other-infos-icons") %>
+          <h6> CEO </h6>
+          <h5> <%= @stock.ceo %> </h5>
+        </div>
+        <div>
+          <%= image_tag("Industry_icon.png", class: "other-infos-icons") %>
+          <h6> Industry </h6>
+          <h5> <%= @stock.industry %> </h5>
+        </div>
+        <div>
+        <%= image_tag("Employees_icon.png", class: "other-infos-icons") %>
+        <h6> Employees</h6>
+        <h5> <%= @stock.employees %> </h5>
+        </div>
+    </div>
   </div>
-
-  <h3> Description </h3>
-  <p> <%= @stock.description %> </p>
-
-  <h3> News </h3>
-  <% @news.each do |news| %>
-    <h4> Headline: <%= news.headline%> </h4>
-    <p> Summary: <%= news.summary%> </p>
-    <p> Source: <%= news.source%> </p>
-    <hr>
-  <% end %>
 </div>
+
+<%= content_for(:after_js) do %>
+  <script>
+  $(document).ready(function(){
+    $('.owl-carousel').owlCarousel();
+  });
+  </script>
+<% end %>
