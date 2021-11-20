@@ -21,6 +21,8 @@
 }
 
 body{
+  width: 100vw;
+  overflow-x: hidden;
   background-attachment: fixed;
   z-index: 2;
 }

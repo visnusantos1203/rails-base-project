@@ -63,8 +63,10 @@
 
     <h5 class="total-bal"> Total balance </h5>
     <div class="total-bal-container">
-      <h3 class="bal-amount"> $<%= Wallet.where(:user_id == 1)[0].balance %> <h3>
-      <hr>
+      <% if current_user %>
+        <h3 class="bal-amount"> $<%= Wallet.where(:user_id == current_user)[0].balance %> <h3>
+        <hr>
+      <% end %>
     </div>
 
     <h5 class="latest-transactions"> Latest Transactions </h5>

@@ -8,6 +8,11 @@ import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
 import "channels";
 import Chart from "chart.js/auto";
+// owlCarousel
+import JQuery from 'jquery';
+window.$ = window.JQuery = JQuery;
+import 'owl.carousel/dist/assets/owl.carousel.css';
+import 'owl.carousel';
 
 require("jquery");
 import "bootstrap";
@@ -15,12 +20,12 @@ import "bootstrap";
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");
-
+//require("custom/navbar")
 Rails.start();
 Turbolinks.start();
 ActiveStorage.start();
 
-let num = 98;
+let num = 143;
 let ctx;
 
 for(let i = 1; i <= num; i++){
@@ -54,3 +59,18 @@ for(let i = 1; i <= num; i++){
 
 };
 
+$(document).ready(function(){
+  $('.owl-carousel').owlCarousel({
+    stagePadding: 50,
+    loop: false,
+    margin:10,
+    responsive:{
+      0:{
+        items:1
+       },
+      600:{
+       items:3
+       }
+     }
+   })
+  });
