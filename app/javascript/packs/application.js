@@ -58,8 +58,7 @@ for(let i = 1; i <= num; i++){
   });
 
 };
-
-$(document).ready(function(){
+document.addEventListener("turbolinks:load", function() {
   $('.owl-carousel').owlCarousel({
     stagePadding: 50,
     loop: false,
@@ -70,7 +69,11 @@ $(document).ready(function(){
        },
       600:{
        items:3
-       }
-     }
-   })
-  });
+      }
+    }
+  })
+});
+
+document.addEventListener("turbolinks:before-cache", function() {
+  $('.owl-carousel').owlCarousel('destroy');
+});
