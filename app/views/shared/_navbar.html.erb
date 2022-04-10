@@ -10,15 +10,13 @@
       <div class="collapse navbar-collapse" id="nav-menu">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" href="/">
-              Home
-            </a>
+            <%= link_to "Home", root_path, :class => current_class?(root_path)  %>
           </li>
           <li class="nav-item" >
-            <a class="nav-link" href="/stocks">Market</a>
+            <%= link_to "Market", stocks_path, :class => current_class?(stocks_path)  %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/portfolios">My Portfolio</a>
+            <%= link_to "My Portfolio", portfolios_path, :class => current_class?(portfolios_path)  %>
           </li>
         </ul>
 
@@ -27,7 +25,7 @@
 
     <div class="user-wallet-container">
       <% if user_signed_in? %>
-        <li class="nav-item dropdown">
+        <div class="nav-item dropdown">
           <a class="nav-link" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <%= image_tag("User_icon.png", class: "user-icon") %>
           </a>
@@ -41,8 +39,8 @@
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Upgrade to Premium</a></li>
           </ul>
-        </li>
-        <a class="nav-link" data-bs-toggle="offcanvas"  data-bs-target="#sidebar" role="button" aria-controls="offcanvasExample">
+        </div>
+        <a class="nav-link" data-bs-toggle="offcanvas"  data-bs-target="#offcanvasRight" role="button" aria-controls="offcanvasRight">
           <%= image_tag("Wallet_icon.png", class: "wallet-icon") %>
         </a>
       <% end %>
@@ -50,7 +48,7 @@
   </div>
 </nav>
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="sidebar" aria-labelledby="offcanvasRightLabel">
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   
   <div class="offcanvas-header">
