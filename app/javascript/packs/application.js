@@ -15,7 +15,6 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
 
 require("jquery");
-require("jquery_ujs");
 //= require jquery
 //= require jquery_ujs
 import "bootstrap";
