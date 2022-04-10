@@ -12,9 +12,9 @@ all_symbols = client.ref_data_symbols
     company_info = client.company(all_symbols[index].symbol) # apparently, one symbol fetched from sandbox contains a "#" that disrupts the seeding process
     
     historical_prices = client.historical_prices(all_symbols[index].symbol)
-
+    
     begin
-      new_stock = Stock.new(symbol: all_symbols[index].symbol, 
+      new_stock = Stock.new(symbol: all_symbols[index].symbol,
                             company_name: company_info.company_name,
                             description: company_info.description,
                             ceo: company_info.ceo,
