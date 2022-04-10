@@ -340,6 +340,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   listen (~> 3.2)
   pg
+  popper_js
   puma (~> 4.1)
   rails (~> 6.0.3, >= 6.0.3.4)
   resque
