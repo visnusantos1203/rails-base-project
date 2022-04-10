@@ -47,14 +47,6 @@
       top: 90%;
       background-color: #2E318B;
     }
-    .e3{
-      width: 770px;
-      height: 730px;
-      background-color: #FFEEFF;
-      top: 35%;
-      right: 60%;
-      z-index: 1;
-    }
 
     .headline{
       display: flex;
@@ -125,9 +117,6 @@
   #blue-graph-bar{
     animation: violet-graph-bars 1500ms ease-in-out infinite alternate-reverse;
   }
-  #Hand-with-magnifying-glass{
-    animation: magnifying-glass 3500ms linear 2s infinite alternate;
-  }
   
 }
 
@@ -137,15 +126,6 @@
   }
   to{
     transform: rotateX(8deg);
-  }
-}
-
-@keyframes magnifying-glass {
-  from{
-    transform: rotateX(0deg);
-  }
-  to{
-    transform: rotateZ(20deg);
   }
 }
 
@@ -192,7 +172,7 @@
   margin-right: 10vw;
   //border: 1px solid black;
   height: auto;
-  z-index: 100 ;
+  z-index: 100;
   .break{
     height: 10rem;
     //background-color: #652D90;
@@ -200,6 +180,7 @@
     justify-content: center;
     flex-direction: column;
     padding-top: 4rem;
+    margin-bottom: 2rem;
     h1, p{
       text-align: center;
     }
@@ -225,28 +206,15 @@
 #footer{
   margin-top: 10vh;
   display: flex;
-  flex-direction: column;
-  background-color: rgb(243, 242, 242);
-  height: 100vh;
+  justify-content: space-around;
+  align-items:center;
+  background-color: black;
+  height: auto;
   padding: 2rem;
-  .inner{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    padding: 2rem;
-    width: 100%;
-    border: 1px solid black;
-    gap: 2rem;
-    height: 65%;
-    .card{
-      border: 1px solid black;
-      width: 30%;
-      height: auto;
-      padding: 2rem;
-      .logo-footer{
-        width: 10rem;
-      }  
-    }
+  .row{
+    color: white;
+    width: 40%;
+    height: 80%;
   }
   .contacts{
     display: flex;
@@ -254,10 +222,7 @@
     flex-wrap: wrap;
     gap: 1rem;
     margin-top: 1rem;
-    border: 1px solid red;
-    > .card{
-      width: 20%;
-      padding: 2rem;
-    }
+    color: white;
+    //border: 1px solid red;
   }
 }

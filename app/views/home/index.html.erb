@@ -7,7 +7,6 @@
   <section id="one">
     <div class="ellipse e1"></div>
     <div class="ellipse e2"></div>
-    <div class="ellipse e3"></div>
 
     <div class="headline">
       <p id="investment"> INVESTMENT </P>
@@ -1602,7 +1601,7 @@
   <section id="two">
     <div class="break">
       <h1> Learning stocks trading, <u>simplified</u></h1>
-      <p> Real time market updates, relevant news, huge financial opportunity. </br> Only here at StocksCrowd. </p>
+      <p> Real time market updates, relevant news, huge financial opportunity </p>
     </div>
     <div class="content">
       <div class="card text-center">
@@ -1611,18 +1610,12 @@
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
-        <div class="card-footer text-muted">
-          2 days ago
-        </div>
       </div>
       <div class="card text-center">
         <div class="card-body">
-          <h5 class="card-title">What's better than free? </h5>
+          <h5 class="card-title">What is better than free? </h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          2 days ago
         </div>
       </div>
       <div class="card text-center">
@@ -1631,9 +1624,6 @@
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
-        <div class="card-footer text-muted">
-          2 days ago
-        </div>
       </div>
       <div class="card text-center">
         <div class="card-body">
@@ -1641,18 +1631,12 @@
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
         </div>
-        <div class="card-footer text-muted">
-          2 days ago
-        </div>
       </div>
       <div class="card text-center">
         <div class="card-body">
           <h5 class="card-title">Great financial opportunity</h5>
           <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
           <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-        <div class="card-footer text-muted">
-          2 days ago
         </div>
       </div>
     </div>
@@ -1662,38 +1646,50 @@
 <!-- Footer -->
 
 <footer id="footer">
-  <div class="inner">
-    <div class="card mb-3">
-      <%= image_tag "stockscrowd_logo_2", class:"logo-footer" %>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
+  <form class="row g-3">
+    <div class="col-sm-6">
+      <label for="inputEmail4" class="form-label">Email</label>
+      <input type="email" class="form-control" id="inputEmail4">
     </div>
-
-    <div class="card mb-3">
-      <%= image_tag "stockscrowd_logo_2", class:"logo-footer" %>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
+    <div class="col-6">
+      <label for="inputAddress" class="form-label">Address</label>
+      <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
     </div>
-
-    <div class="card mb-3">
-      <%= image_tag "stockscrowd_logo_2", class:"logo-footer" %>
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
+    <div class="col-6">
+      <label for="inputAddress2" class="form-label">Address 2</label>
+      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
     </div>
-
-  </div>
+    <div class="col-sm-6">
+      <label for="inputCity" class="form-label">City</label>
+      <input type="text" class="form-control" id="inputCity">
+    </div>
+    <div class="col-sm-4">
+      <label for="inputState" class="form-label">State</label>
+      <select id="inputState" class="form-select">
+        <option selected>Choose...</option>
+        <option>...</option>
+      </select>
+    </div>
+    <div class="col-sm-2">
+      <label for="inputZip" class="form-label">Zip</label>
+      <input type="text" class="form-control" id="inputZip">
+    </div>
+    <div class="col-12">
+      <button type="submit" class="btn btn-outline-light">Submit</button>
+    </div>
+  </form>
 
   <div class="contacts">
-    <div class="card mb-3">
+    <div class="mb-3">
+      <h4> Services</h4>
+      <p> Philippines </p>
+      <p> United States of America </p>  
+      <p> Japan  </p>
+      <p> China </p>
+      <p> Singapore  </p>
+    </div>
+
+    <div class="mb-3">
       <h4> Contact Us </h4>
       <p> Juan@stockscrowd.com </p>
       <p> 1-800 -780-5009 </p>  
@@ -1702,7 +1698,7 @@
       <p> 95014-0642 United States  </p>
     </div>
 
-    <div class="card mb-3">
+    <div class="mb-3">
       <h4> Careers </h4>
       <p> Philippines </p>
       <p> United States of America </p>  
@@ -1710,6 +1706,7 @@
       <p> China </p>
       <p> Singapore  </p>
     </div>
+
   </div>
   
 </footer>
