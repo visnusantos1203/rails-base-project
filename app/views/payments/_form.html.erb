@@ -1,13 +1,14 @@
-<%= form_with scope: :payment, model: @payment, class: "payment-form", locale: true do |f| %>
-  <div class="mb-3">
-    <%= f.label :quantity %>
-    <%= f.number_field :quantity %>
-  </div>
-  <%= f.hidden_field :stock_id, value: params[:id] %>
-  <%= f.hidden_field :transaction_type, value: params[:transaction_type] == 1 ? "buy" : "sell" %>
-
-  <div>
-    <%= f.submit class: 'btn btn-outline-primary btn-sm' %>
-  </div>
-  <%= link_to 'Home', root_path, class: 'btn btn-primary btn-sm', method: :get %>
-<% end %>
+<div class="container-fluid mt-3">
+    <%= form_with scope: :payment, model: @payment, class: "payment-form", locale: true do |f| %>
+      <div class="mb-3">
+        <%= f.label :quantity %>
+        <%= f.number_field :quantity %>
+      </div>
+      <%= f.hidden_field :stock_id, value: params[:id] %>
+      <%= f.hidden_field :transaction_type, value: params[:transaction_type]%>
+          
+      <%= f.submit class: 'btn btn-outline-primary btn-sm' %>
+     
+      <%= link_to 'Back', stock_path(params[:id]), class: 'btn btn-primary btn-sm', method: :get %>
+    <% end %>
+</div > 
