@@ -44,7 +44,9 @@ module.exports = function(api) {
       [
         '@babel/plugin-proposal-class-properties',
         {
-          loose: true
+          assumptions: {
+            privateFieldsAsProperties: true,
+          }
         }
       ],
       [
