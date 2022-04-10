@@ -15,8 +15,11 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel';
 
 require("jquery");
+require("jquery_ujs");
+//= require jquery
+//= require jquery_ujs
 import "bootstrap";
-// require("@rails/ujs").start(); # Pag naka uncomment to hindi gumagana yung chart.js
+// require("@rails/ujs").start(); // Pag naka uncomment to hindi gumagana yung chart.js
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("channels");

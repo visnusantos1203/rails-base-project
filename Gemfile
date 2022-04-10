@@ -18,6 +18,7 @@ gem 'hamlit-rails'
 
 gem 'bootstrap', '~> 5.1.0'
 gem 'popper_js'
+gem 'jquery-rails'
 gem 'iex-ruby-client'
 gem 'chartkick'
 gem 'resque'
