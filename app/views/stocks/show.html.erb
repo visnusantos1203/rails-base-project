@@ -6,8 +6,8 @@
       <h1> <%= @stock.company_name.upcase %></h1>
 
       <div class="buy-sell-container">
-        <%= button_to "BUY", payment_buy_path(id: @stock.id, transaction_type: 1), class: "btn btn-outline-danger ", method: "get" %>
-        <%= button_to "SELL", payment_sell_path(id: @stock.id, transaction_type: 0), class: "btn btn-outline-success", method: "get" %>
+        <%= button_to "BUY", payment_buy_path(id: @stock.id, transaction_type: "buy"), class: "btn btn-outline-danger ", method: "get" %>
+        <%= button_to "SELL", payment_sell_path(id: @stock.id, transaction_type: "sell"), class: "btn btn-outline-success", method: "get" %>
       </div>
     </div>
 
@@ -30,27 +30,10 @@
           <div class="card-body">
             <h4> <%= news.source%> </h4>
             <p class="card-title"><%= news.headline%></p>
-            <button type="button" class="btn btn-outline-primary-sm" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
               Read More
             </button>
 
-            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-              <div class="modal-dialog-scrollable">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <p> <%= news.summary %> </p>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Understood</button>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       <% end %>
