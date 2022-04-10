@@ -28,7 +28,7 @@ class PaymentsController < ApplicationController
     @payment.current_price = client.price(stocks[@payment.stock_id].symbol)
     
     if @payment.save
-      redirect_to stocks_path
+      redirect_to portfolios_path
     else
       puts params
       redirect_back fallback_location: payments_path
