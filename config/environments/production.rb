@@ -119,6 +119,7 @@ Rails.application.configure do
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
     :address              => "smtp.gmail.com",
+    :domain               => 'https://stockscrowd.herokuapp.com/',
     :port                 => 587,
     :user_name            => Rails.application.credentials.gmail_mailer[:username],
     :password             => Rails.application.credentials.gmail_mailer[:password],
