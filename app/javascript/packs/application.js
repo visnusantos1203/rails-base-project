@@ -16,7 +16,7 @@ import 'owl.carousel';
 
 require("jquery");
 //= require jquery
-//= require jquery_ujs
+//= require rails-ujs
 import "bootstrap";
 // require("@rails/ujs").start(); // Pag naka uncomment to hindi gumagana yung chart.js
 require("turbolinks").start();

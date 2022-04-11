@@ -19,9 +19,11 @@ gem 'hamlit-rails'
 gem 'bootstrap', '~> 5.1.0'
 gem 'popper_js'
 gem 'jquery-rails'
+gem "rails-ujs"
 gem 'iex-ruby-client'
 gem 'chartkick'
 gem 'resque'
+gem 'sidekiq'
 gem 'whenever', :require => false
 
 group :development, :test do
