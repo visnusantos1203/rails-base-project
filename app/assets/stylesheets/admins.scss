@@ -1,3 +1,23 @@
-h1{
+
+.admin-container{
+  display: flex;
+  flex-direction: column;
   padding-top: 5rem;
+  max-width: 90vw;
+  .new-trader{
+    max-width: 10rem;
+  }
+  .traders-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+  }
+}
+
+table{
+  width: 80vw !important;
+  margin: 0 auto;
+  text-align: center;
 }

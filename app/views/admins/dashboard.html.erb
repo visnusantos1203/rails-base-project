@@ -1,45 +1,74 @@
 <%= render "admins/navbar" %>
+<div class="admin-container container-fluid">
+  <h1> Dashboard </h1>
+  <hr>
 
-<h1> Welcome to admin dashboard </h1>
+  <div class="container-fluid traders-header">
+    <h2> All traders </h2>
+    <%= link_to "Create new trader", admins_new_user_path, class: "btn btn-outline-primary new-trader" %>
+  </div>
 
-<h2> Create new trader </h2>
-<%= link_to "Create new trader", admins_new_user_path %>
-<hr>
-
-<h2> All traders </h2>
-<% if @all_users.empty? %>
-  <p> Sorry, we don't have traders yet :( </p>
-<% else %>
-  <% @all_users.each do |trader| %>
-    <div>
-      <h6> ID: <%= trader.id %> </h6>
-      <h6> Email: <%= trader.email %> </h6>
-      <h6> Status: <%= trader.approved ? "Approved" : "Pending" %> </h6>
-      <%= link_to "View", show_profile_path(trader.id), class: "btn btn-outline-secondary", method: "get" %>
-      <%= link_to "Update", edit_user_profile_path(trader.id), class: "btn btn-outline-secondary", method: "get" %>
-      <% unless trader.approved %>
-        <%= link_to "Approve this trader", approve_user_path(trader.id), class: "btn btn-outline-secondary", method: "put" %>
-      <% end %>
-    </div>
-    <hr>
+  <% if @all_users.empty? %>
+    <p> Sorry, we do not have traders yet :( </p>
+  <% else %>
+      <table class="table table-striped table-bordered px-1">
+        <thead>
+          <tr class="table-dark">
+            <th scope="col">User ID</th>
+            <th scope="col">Email</th>
+            <th scope="col">Status</th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody class="table-striped">
+          <% @all_users.sort.each_with_index do |trader, index| %>
+            <tr>
+              <th scope="row"><%= trader.id %></th>
+              <td><%= trader.email %></td>
+              <td><%= trader.approved ? "Approved" : "Pending" %></td>
+              <td><%= link_to "View", show_profile_path(trader.id), class: "btn btn-outline-secondary", method: "get" %></td>
+              <td><%= link_to "Update", edit_user_profile_path(trader.id), class: "btn btn-outline-secondary", method: "get" %></td>
+              <% if trader.approved %>
+                <td></td>
+              <% else %>
+                <td><%= link_to "Approve this trader", approve_user_path(trader.id), class: "btn btn-outline-secondary", method: "put" %></td>
+              <% end %>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
   <% end %>
+  <hr>
 
-<% end %>
-<hr>
-
-<h2> All transactions </h2>
-<% if @transactions.empty? %>
-  Oops! There are no transactions yet
-<% else %>
-  <% @transactions.each do |transaction| %>
-    <div>
-      <p> Transaction ID: <%= transaction.id %> </p>
-      <p> User ID: <%= transaction.user_id %> </p>
-      <p> Transaction Type: <%= transaction.transaction_type %> </p>
-      <p> Quantity: <%= transaction.quantity %> </p>
-      <p> Current price: <%= transaction.current_price %> </p>
-      <p> Time placed: <%= transaction.time_placed %> </p>
-    </div>
-    <hr>
+  <h2> All transactions </h2>
+  <% if @transactions.empty? %>
+    Oops! There are no transactions yet
+  <% else %>
+    <table class="table table-striped table-bordered px-1">
+      <thead>
+        <tr class="table-dark">
+          <th scope="col">Transaction ID</th>
+          <th scope="col">Transaction Type</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Current Price</th>
+          <th scope="col">Total Amount</th>
+          <th scope="col">Time Placed</th>
+        </tr>
+      </thead>
+      <tbody >
+        <% @transactions.filter_map do |transaction| %>
+          <tr>
+            <th scope="row"><%= transaction.id %></th>
+            <td class='<%= transaction.transaction_type == "sell" ? 'table-success' : 'table-danger' %>'><%= transaction.transaction_type.upcase %></td>
+            <td><%= transaction.quantity %></td>
+            <td><%= transaction.current_price %></td>
+            <td><%= transaction.current_price * transaction.quantity %></td>
+            <td><%= transaction.time_placed %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   <% end %>
-<% end %>
+</div>
