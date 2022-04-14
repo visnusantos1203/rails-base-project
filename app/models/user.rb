@@ -10,6 +10,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  scope :asc_name, -> { order("users.first_name ASC ")}
+  scope :desc_name, -> { order("users.first_name DESC ")}
 
   private 
 
