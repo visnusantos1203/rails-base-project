@@ -5,7 +5,7 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :lockable, :timeoutable, :trackable and :omniauthable
   validates :first_name, :last_name, :username, presence: true
-  after_save :create_user_wallet, :send_welcome_email
+  after_save :create_user_wallet
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
