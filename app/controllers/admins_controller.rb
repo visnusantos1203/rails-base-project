@@ -14,7 +14,7 @@ class AdminsController < ApplicationController
     @user.approved = true
     @user.save
     if @user.save
-      ConfirmationMailer.account_approval_email(@user.email).deliver_now
+      # ConfirmationMailer.account_approval_email(@user.email).deliver_now
       redirect_back fallback_location: admins_dashboard_path
     else
       render :approve_users
