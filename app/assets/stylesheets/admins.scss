@@ -1,9 +1,11 @@
-
+.admin-navbar{
+  margin-bottom: 5rem;
+}
 .admin-container{
   display: flex;
   flex-direction: column;
   padding-top: 5rem;
-  max-width: 90vw;
+  max-width: 80vw;
   .new-trader{
     max-width: 10rem;
   }
@@ -12,10 +14,42 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    width: 80vw;
+    width: inherit;
+  }
+  .all-transactions{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: inherit;
+    .filter-container{
+      display: flex;
+      width: 40%;
+      flex-direction: row;
+      justify-content: space-around;
+      align-items: center;      
+      .filter-option{
+        display: flex;
+        width: 70%;
+        justify-content: space-evenly;
+        //border-left: 1px solid black;
+        align-items: center;
+        a{
+          padding: 0 1rem;
+          text-decoration: none;
+          text-align: center;
+          border-left: 1px solid black;
+        }
+      }
+    }
   }
 }
 
+// For user page
+
+.user-container{
+  padding-top: 5rem;
+}
 table{
   width: 80vw !important;
   margin: 0 auto;
