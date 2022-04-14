@@ -28,8 +28,8 @@ body{
 }
 
 .notification{
+  display: none !important;
   position: absolute;
   display: flex;
   flex-direction: column;
-  z-index: 3;
 }
