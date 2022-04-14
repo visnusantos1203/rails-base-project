@@ -3,7 +3,10 @@ class AdminsController < ApplicationController
   def dashboard
     @for_approvals = User.where(approved: false)
     @all_users = User.all
-    @transactions = Payment.all
+
+    @search_params = params[:search]
+    @sort_params = params[:sort]
+
   end
 
   def approve_users;
