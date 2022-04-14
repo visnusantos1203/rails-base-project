@@ -1,9 +1,11 @@
 <%= render "admins/navbar" %>
 
-<div class="container">
+<div class="container-fluid user-container">
   <p> ID: <%= @user.id%> </p>
   <p> First Name: <%= @user.first_name%> </p>
   <p> Last Name: <%= @user.last_name%> </p>
+  <p> Username: <%= @user.username%> </p>
+  <p> Status: <%= @user.approved ? "Approved" : "Pending"%> </p>
   <% if @user.wallet == nil %>
     <p> This user doesn't have wallet yet </p>
   <% else %>
