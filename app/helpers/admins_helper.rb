@@ -10,11 +10,11 @@ module AdminsHelper
       end
     else
       if sort == "transaction type"
-        transactions = Payment.order("transaction_type ASC")
+        transactions = Payment.asc_transaction_type
       elsif sort == "amount"
-        transactions =Payment.order("quantity * current_price DESC")
+        transactions =Payment.desc_amount
       elsif sort == "date"
-        transactions =Payment.order("time_placed ASC")
+        transactions =Payment.asc_time_placed
       else
         transactions = Payment.all
       end
