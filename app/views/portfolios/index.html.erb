@@ -5,7 +5,7 @@
   <% if @payments.empty? %>
     <p> Oops.. You have not traded yet. Click <%= link_to "here", stocks_path, method: "get" %> to start trading. </p>
   <% else %>
-    <% sorted_company_name(@companies).each_with_index do |company_name, index| %>
+    <% sorted_company_names(@payments).each_with_index do |company_name, index| %>
       <div class="accordion" id="accordionExample">
         <div class="accordion-item">
           <h2 class="accordion-header" id=`heading#{index + 1}` >
