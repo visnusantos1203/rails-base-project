@@ -1,14 +1,14 @@
 module PortfoliosHelper
-  def sorted_company_name(company)
-    arr_of_company_names = company
-    result = []
-    arr_of_company_names.each_with_index do |x, i| 
-      if i.zero? 
-        result << x 
-      elsif result.include?(x) 
-      else result << x  
-      end # nagamit ko dito yung sagot sa isang coding challenge hehe
+
+  def sorted_company_names(payments)
+    sorted_company_names = []
+    # Selects distinct stock ids from user's payment
+    payments.distinct.pluck(:stock_id).each do |stock_id|
+    # Queries the name of the company based on the distinct stock ids and then pushed into the company names array
+      sorted_company_names << [Stock.find_by(id: stock_id).company_name, stock_id]
     end
-    result.sort
+    # Sorts and returns an array of company names
+    sorted_company_names.sort
   end
+
 end
