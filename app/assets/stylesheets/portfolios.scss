@@ -5,4 +5,19 @@
 .portfolio-main{
   padding-top: 5rem;
   //background-color: #86298B;
+  .accordion{
+    width: 80%;
+    .accordion-btn-container{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      color: black;
+      .accordion-img{
+        border-radius: 50%;
+        height: 4rem;
+        width: 4rem;
+      }
+    }
+  }
 }
