@@ -32,9 +32,9 @@
           <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
             <li><a class="dropdown-item" href="#">My Account</a></li>
             <% if user_signed_in? %>
-              <li><%= link_to 'Logout', destroy_user_session_path, method: :get , class: "dropdown-item" %></li>
+              <li><%= link_to 'Logout', destroy_user_session_path, method: :delete , class: "dropdown-item" %></li>
             <% elsif admin_signed_in? %>
-              <li><%= link_to 'Logout', destroy_admin_session_path, method: :get , class: "dropdown-item" %></li>
+              <li><%= link_to 'Logout', destroy_admin_session_path, method: :delete , class: "dropdown-item" %></li>
             <% end %>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Upgrade to Premium</a></li>
@@ -48,40 +48,35 @@
   </div>
 </nav>
 
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
-  <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  
-  <div class="offcanvas-header">
-    <div class="offcanvas-title" id="offcanvasRightLabel">
-      <a class="navbar-brand" href="/"> <%= image_tag("stockscrowd_logo_2.png", class: "wallet-logo") %> </a>
-    </div>
-  </div>
-  <div class="offcanvas-body">
-    <h5 class="my-wallet"> My Wallet </h5>
+<% if user_signed_in? %>
 
-    <h5 class="total-bal"> Total balance </h5>
-    <div class="total-bal-container">
-      <% if current_user %>
-        <h3 class="bal-amount"> $<%= Wallet.where(:user_id == current_user)[0].balance %> <h3>
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    
+    <div class="offcanvas-body">
+      <h5 class="my-wallet"> My Wallet </h5>
+
+      <h5 class="total-bal"> Total balance </h5>
+      <div class="total-bal-container">
+        <h3 class="bal-amount "> $<%= Wallet.where(user_id: current_user.id)[0].balance.round(2) %> <h3>
         <hr>
-      <% end %>
-    </div>
-
-    <h5 class="latest-transactions"> Latest Transactions </h5>
-
-    <div class="transactions-container">
-      <% Payment.where(:user_id == current_user).each do |transaction|%>
-        <div class="transaction-item">
-          <span><%= Stock.find(transaction.stock_id).symbol %> </span>
-          <span>$<%= (transaction.quantity * transaction.current_price) %> </span>
-          <span><%= transaction.transaction_type %> </span>
-        </div>
-      <% end %>
-      <div>
-        <%= link_to "See all transactions", payments_path, method: :get %>
       </div>
+
+      <h5 class="latest-transactions"> Latest Transactions </h5>
+
+      <div class="transactions-container">
+        <% Payment.where(user_id: current_user.id).each do |transaction|%>
+          <div class="transaction-item">
+            <span>$<%= (transaction.quantity * transaction.current_price) %> </span>
+            <span><%= transaction.transaction_type %> </span>
+          </div>
+        <% end %>
+        <div>
+          <%= link_to "See all transactions", portfolios_path, method: :get %>
+        </div>
+      </div>
+      <%= link_to "Top-up my wallet", cashin_path,  class: "btn btn-outline-primary mx-auto"%>
+
     </div>
-
   </div>
-
-</div>
+<% end %>

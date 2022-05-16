@@ -99,18 +99,18 @@
   .offcanvas-body{
     padding: 0;
     .my-wallet{
-      background-color: #86298B;
+      background-color: #ffffff;
       width: 85%;
       text-align: center;
-      color: white;
+      color: rgb(0, 0, 0);
       height: 2rem;
       padding: .2em 0 0 4rem;
     }
     .total-bal{
-      background-color: #86298B;
+      background-color: #ffffff;
       width: 60%;
       text-align: center;
-      color: white;
+      color: rgb(0, 0, 0);
       height: 2rem;
       padding: .2em;
       margin-top: 1rem;
@@ -128,14 +128,14 @@
     .transactions-container{
       padding: 0 3rem;
       margin-top: 2rem;
-      overflow-y: scroll;
+      overflow-y: hidden;
       .transaction-item{
         display: flex;
         justify-content: space-around;
         width: 100%;
         background-color: rgb(243, 243, 243);
         margin-bottom: 1px;
-        overflow: scroll;
+        overflow: hidden;
         max-height: 35vh;
         scrollbar-width: none;
         span{
