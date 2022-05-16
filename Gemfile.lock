@@ -301,6 +301,7 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
+    stripe (6.0.0)
     temple (0.8.2)
     thor (1.1.0)
     thread_safe (0.3.6)
@@ -367,6 +368,7 @@ DEPENDENCIES
   sidekiq
   spring
   spring-watcher-listen (~> 2.0.0)
+  stripe
   turbolinks (~> 5)
   tzinfo-data
   vcr
