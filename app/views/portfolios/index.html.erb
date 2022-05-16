@@ -6,24 +6,25 @@
     <p> Oops.. You have not traded yet. Click <%= link_to "here", stocks_path, method: "get" %> to start trading. </p>
   <% else %>
     <% sorted_company_names(@payments).each_with_index do |company_name, index| %>
-      <div class="accordion" id="accordionExample">
+      <div class="accordion mx-auto" id="accordionExample">
         <div class="accordion-item">
-          <h2 class="accordion-header" id=`heading#{index + 1}` >
-            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target=`#collapse#{index + 1}` aria-expanded="true" aria-controls=`collapse#{index + 1}`>
-              <%= company_name[0] %>
+          <h2 class="accordion-header" id='heading<%= index + 1 %>' >
+            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target='#collapse<%= index + 1 %>' aria-expanded="true" aria-controls='collapse<%= index + 1 %>'>
+              <div class="accordion-btn-container">
+                <img src=<%= Stock.find(company_name[1]).logo_url %> class="accordion-img">
+                <h5><%= company_name[0].upcase %></h5>
+              </div>
             </button>
           </h2>
-          <div id=`collapse#{index + 1}` class="accordion-collapse collapse show" aria-labelledby= `heading#{index + 1}` data-bs-parent="#accordionExample">
+          <div id='collapse<%= index + 1 %>' class="accordion-collapse collapse" aria-labelledby= 'heading<%= index + 1 %>' data-bs-parent="#accordionExample">
             <div class="accordion-body">
               <% @payments.each do |payment| %>
-
                 <% if company_name[1] == payment.stock_id %>
                   <p> Transaction ID: <%= payment.id %> </p>
                   <p> Date purchased: <%= payment.time_placed.to_formatted_s(:long) %> </p>
                   <p> Quantity purchased: <%= payment.quantity %> </p>
                   <p> Price: <%= payment.current_price %> </p>
                   <p> Transaction Type: <%= payment.transaction_type %> </p>
-
                   <hr>
                 <% end %>
 
@@ -35,5 +36,5 @@
     <% end %>
   <% end %>
 
-  <%= button_to "New Transaction", stocks_path, class: "btn btn-outline-primary", method: "get" %>
+  <!--<%= button_to "New Transaction", stocks_path, class: "btn btn-outline-primary", method: "get" %>-->
 </div>
