@@ -1,0 +1,16 @@
+<%= link_to "Home", root_path, class: "btn btn-primary mx-auto" %>
+<div class="container-fluid mt-3">
+    <%= form_with scope: :payment, class: "payment-form", locale: true do %>
+      <div class="mb-3">
+        <h1> Cash-in</h1>
+      </div>
+
+      <div class="input-group mb-3">
+        <%= select_tag :currency, options_for_select([["USD", "usd"], ["PHP", "php"]]), class: "input-group-text" %>
+        <%= text_field_tag :amount, params[:amount], placeholder: "minimum of 10$", step: 0.01, class: "form-control" %> <!-- I still need to work on input's decimal places -->
+      </div>
+      <%= button_to 'Proceed', payments_cashin_path, remote: true, class: 'btn btn-outline-primary btn-sm', method: 'post' %>
+    <% end %>
+</div > 
+
+# hindi pa to tapos!! 
