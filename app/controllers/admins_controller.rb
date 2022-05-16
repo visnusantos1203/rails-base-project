@@ -3,10 +3,14 @@ class AdminsController < ApplicationController
   def dashboard
     @for_approvals = User.where(approved: false)
     @all_users = User.all
-
+    @transactions = Payment.all
     @search_params = params[:search]
     @sort_params = params[:sort]
 
+    respond_to do |format|
+      format.html
+      format.csv { send_data @all_users.to_csv }
+    end
   end
 
   def approve_users;

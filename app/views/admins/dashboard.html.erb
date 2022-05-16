@@ -6,7 +6,7 @@
 
   <div class="traders-header container-fluid">
     <h2> All traders </h2>
-    <%= link_to "Create new trader", admins_new_user_path, class: "btn btn-outline-primary new-trader" %>
+    <%= link_to "Generate User Report", admins_dashboard_path(format: :csv), class: "btn btn-outline-primary btn-md" %>
   </div>
 
   <% if @all_users.empty? %>
@@ -38,6 +38,7 @@
           <% end %>
         </tbody>
       </table>
+    <%= link_to "Create new trader", admins_new_user_path, class: "btn btn-primary new-trader ms-auto" %>
   <% end %>
   <hr>
 
@@ -103,5 +104,6 @@
         <% end %>
       </tbody>
     </table>
+    <%= link_to "Generate Transction Report", payments_path(format: :csv), class: "btn btn-outline-primary btn-md mx-auto" %>
   <% end %>
 </div>
