@@ -8,7 +8,8 @@ Rails.application.routes.draw do
 
   get '/payments/:id/:transaction_type/buy' => 'payments#buy', as: "payment_buy" # yung name before 'controller' lang, snake case, then #, then saang action or method pupunta(index)
   get '/payments/:id/:transaction_type/sell' => 'payments#sell', as: "payment_sell" # yung name before 'controller' lang, snake case, then #, then saang action or method pupunta(index)
-
+  get '/payments/new/cashin' => 'payments#new_cashin', as: :cashin
+  post '/payments/new/cashin' => 'payments#cashin', as: "payments_cashin"
   # get '/admins/dashboard', to: 'admins#dashboard' 
   get '/admins/dashboard', to: 'admins#dashboard' 
   put '/admins/approve_users/:id', to: 'admins#approve_users', as: :approve_user
