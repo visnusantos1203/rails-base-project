@@ -17,7 +17,7 @@ import 'owl.carousel';
 require("jquery");
 //= require jquery
 //= require rails-ujs
-import "bootstrap";
+//import "bootstrap";
 // require("@rails/ujs").start(); // Pag naka uncomment to hindi gumagana yung chart.js
 require("turbolinks").start();
 require("@rails/activestorage").start();
@@ -73,9 +73,18 @@ document.addEventListener("turbolinks:load", function() {
        items:3
       }
     }
-  })
+  });
+  $('.toast').toast('hide');
 });
 
 document.addEventListener("turbolinks:before-cache", function() {
   $('.owl-carousel').owlCarousel('destroy');
 });
+
+
+// const toastDisappear = () => {
+//   document.getElementById('close-btn').style.div = "none"
+// }
+
+// document.getElementById('close-btn').addEventListener("click", toastDisappear)
+
