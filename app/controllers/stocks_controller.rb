@@ -11,4 +11,11 @@ class StocksController < ApplicationController
     @price = client.price(@stock.symbol)
     @news = client.news(@stock.symbol)
   end
+
+  # def update_price_history
+  #   @stocks = Stock.all.order("id ASC")
+  #   # UpdatePriceWorker.perform_async(@stocks)
+  #   FetchHistoricalPriceJob.perform_async(@stocks)
+
+  # end
 end
