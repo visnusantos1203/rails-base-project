@@ -3,6 +3,7 @@
 ##### StocksCrowd is a Stock trading platform made using Ruby On Rails, PostgreSQL and IEX API. The purpose of this application is to provide real-time information about the listed stocks and allow users to practice buying and selling stocks without actually losing real money.
 
 Check it out [here](https://stockscrowd.herokuapp.com/)
+
 Test Admin Credentials: (Email: stocks.crowd@gmail.com Password: 123456)
 Test User Credentials: (Email: visnu.santos1203@gmail.com Password: 123456)
 
