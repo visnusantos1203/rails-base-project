@@ -1,6 +1,6 @@
 # StocksCrowd
 
-##### StocksCrowd is a Stock trading platform made using Ruby On Rails and IEX API. The purpose of this application is to provide real-time information about the listed stocks for greater success rate in stocks trading.
+##### StocksCrowd is a Stock trading platform made using Ruby On Rails, PostgreSQL and IEX API. The purpose of this application is to provide real-time information about the listed stocks and allow users to practice buying and selling stocks without actually losing real money.
 
 Check it out [here](https://stockscrowd.herokuapp.com/)
 
@@ -8,7 +8,7 @@ Check it out [here](https://stockscrowd.herokuapp.com/)
 ![SC-HOME](https://user-images.githubusercontent.com/81145716/141609226-a474590a-debc-4614-846f-cd291266c7da.PNG)
 
 # Landing Page (user signed in)
-![SC-HOME-LOGGED-IN](https://user-images.githubusercontent.com/81145716/141609249-3b31a70f-675e-42ff-b127-8e9e77f87ad1.PNG)
+![SC-HOME-LOGGED-IN]![Landing_page](https://user-images.githubusercontent.com/81145716/168800210-81af41da-be9b-4e4c-89eb-1220edad9481.png)
 
 # Login Page
 ![SC-LOGIN](https://user-images.githubusercontent.com/81145716/141609267-209e9dfc-fd26-42e3-998c-feb96b9255ea.PNG)
