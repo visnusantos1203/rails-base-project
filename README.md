@@ -3,6 +3,8 @@
 ##### StocksCrowd is a Stock trading platform made using Ruby On Rails, PostgreSQL and IEX API. The purpose of this application is to provide real-time information about the listed stocks and allow users to practice buying and selling stocks without actually losing real money.
 
 Check it out [here](https://stockscrowd.herokuapp.com/)
+Test Admin Credentials: (Email: stocks.crowd@gmail.com Password: 123456)
+Test User Credentials: (Email: visnu.santos1203@gmail.com Password: 123456)
 
 # Landing Page
 ![Landing_page_not_signed_in](https://user-images.githubusercontent.com/81145716/168800731-e4409b3e-1e8b-422a-8383-9a0780fcd582.png)
@@ -34,7 +36,7 @@ Check it out [here](https://stockscrowd.herokuapp.com/)
 # Top up successful notification after successful Stripe checkout
 ![Top_up_successful_notif](https://user-images.githubusercontent.com/81145716/168806419-9c1b9f3e-1e07-49c8-ab32-883c3b55bb19.png)
 
-# Admin Dashboard
+# Admin Dashboard (go to Stockscrowd.herokuapp.com/admins/dashboard)
 ![Admin_dashboard](https://user-images.githubusercontent.com/81145716/168806722-375b5fb8-d685-4669-bf78-fa21a5822423.png)
 
 # Sample CSV Report
