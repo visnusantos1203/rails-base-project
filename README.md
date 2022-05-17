@@ -5,6 +5,7 @@
 Check it out [here](https://stockscrowd.herokuapp.com/)
 
 Test Admin Credentials: (Email: stocks.crowd@gmail.com Password: 123456)
+
 Test User Credentials: (Email: visnu.santos1203@gmail.com Password: 123456)
 
 # Landing Page
